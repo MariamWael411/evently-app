@@ -81,10 +81,28 @@ class AppStyle {
     color: AppColor.blue,
     fontWeight: FontWeight.w700,
   );
+  static final TextStyle semBold14BlueUnderLine = GoogleFonts.poppins(
+    fontSize: 14,
+    color: AppColor.blue,
+    fontWeight: FontWeight.w700,
+    decoration: TextDecoration.underline,
+    decorationColor: AppColor.blue,
+    decorationThickness: 2,
+    decorationStyle: TextDecorationStyle.solid,
+  );
   static final TextStyle semBold14LightBlue = GoogleFonts.poppins(
     fontSize: 14,
     color: AppColor.lightBlue,
     fontWeight: FontWeight.w700,
+  );
+  static final TextStyle semBold14LightBlueUnderLine = GoogleFonts.poppins(
+    fontSize: 14,
+    color: AppColor.lightBlue,
+    fontWeight: FontWeight.w700,
+    decoration: TextDecoration.underline,
+    decorationColor: AppColor.lightBlue,
+    decorationThickness: 1,
+    decorationStyle: TextDecorationStyle.solid,
   );
   static final TextStyle med16Blue = GoogleFonts.poppins(
     fontSize: 16,

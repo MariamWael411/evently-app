@@ -1,8 +1,9 @@
 import 'package:evently/providers/language_provider.dart';
 import 'package:evently/providers/theme_provider.dart';
 import 'package:evently/ui/Login/login_screen.dart';
+import 'package:evently/ui/Register/register_screen.dart';
 import 'package:evently/ui/home.dart';
-import 'package:evently/ui/introduction_screen2.dart';
+import 'package:evently/ui/introduction_screen/introduction_screen2.dart';
 import 'package:evently/utils/app_route.dart';
 import 'package:evently/utils/app_theme.dart';
 import 'package:flutter/material.dart';
@@ -39,7 +40,8 @@ class MyApp extends StatelessWidget {
       initialRoute: AppRoute.homeScreen,
       routes: {AppRoute.homeScreen: (context) => Home(),
         AppRoute.introScreen: (context) => IntroductionScreen2(),
-        AppRoute.loginScreen: (context) => LoginScreen()
+        AppRoute.loginScreen: (context) => LoginScreen(),
+        AppRoute.registerScreen: (context) => RegisterScreen(),
       },
     );
   }

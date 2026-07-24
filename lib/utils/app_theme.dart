@@ -24,7 +24,7 @@ class AppTheme {
       bodyLarge: AppStyle.semBold20Black,
       bodyMedium: AppStyle.reg16Gray,
       bodySmall: AppStyle.med18Blue,
-      displayLarge: AppStyle.semBold14White,
+        displayLarge: AppStyle.semBold14BlueUnderLine,
       displayMedium: AppStyle.reg14Blue,
       displaySmall: AppStyle.med20White,
       headlineLarge: AppStyle.semBold24Blue,
@@ -62,7 +62,7 @@ class AppTheme {
       bodyLarge: AppStyle.semBold20White,
       bodyMedium: AppStyle.reg16LightGray,
       bodySmall: AppStyle.med18White,
-      displayLarge: AppStyle.semBold14White,
+        displayLarge: AppStyle.semBold14LightBlueUnderLine,
       displayMedium: AppStyle.reg14White,
       displaySmall: AppStyle.med20White,
       headlineLarge: AppStyle.semBold24White,
@@ -74,6 +74,7 @@ class AppTheme {
       titleLarge: AppStyle.med16White,
       titleMedium: AppStyle.reg12lightBlue,
         titleSmall: AppStyle.semBold14White
+
 
     ),
   );

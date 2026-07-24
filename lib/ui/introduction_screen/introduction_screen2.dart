@@ -1,12 +1,12 @@
-import 'package:evently/ui/list_view_widget.dart';
+import 'package:evently/ui/introduction_screen/list_view_widget.dart';
 import 'package:evently/utils/app_route.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../l10n/app_localizations.dart';
-import '../providers/theme_provider.dart';
-import '../utils/app_image.dart';
-import '../utils/config.dart';
+import '../../l10n/app_localizations.dart';
+import '../../providers/theme_provider.dart';
+import '../../utils/app_image.dart';
+import '../../utils/config.dart';
 
 class IntroductionScreen2 extends StatefulWidget {
   IntroductionScreen2({super.key});

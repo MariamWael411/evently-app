@@ -1,7 +1,7 @@
 import 'package:evently/l10n/app_localizations.dart';
 import 'package:evently/providers/language_provider.dart';
 import 'package:evently/providers/theme_provider.dart';
-import 'package:evently/ui/custom_elevated_button.dart';
+import 'package:evently/ui/widgets/custom_elevated_button.dart';
 import 'package:evently/utils/app_color.dart';
 import 'package:evently/utils/app_image.dart';
 import 'package:evently/utils/app_route.dart';

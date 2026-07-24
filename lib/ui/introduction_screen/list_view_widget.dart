@@ -1,12 +1,12 @@
-import 'package:evently/ui/custom_elevated_button.dart';
+import 'package:evently/ui/widgets/custom_elevated_button.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-import '../l10n/app_localizations.dart';
-import '../providers/theme_provider.dart';
-import '../utils/app_image.dart';
-import '../utils/config.dart';
+import '../../l10n/app_localizations.dart';
+import '../../providers/theme_provider.dart';
+import '../../utils/app_image.dart';
+import '../../utils/config.dart';
 
 class ListViewWidget extends StatelessWidget {
   ListViewWidget({

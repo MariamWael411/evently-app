@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_toggle_button/flutter_toggle_button.dart';
 
-import '../utils/config.dart';
+import '../../utils/config.dart';
 
 typedef onClick = void Function(int);
 
