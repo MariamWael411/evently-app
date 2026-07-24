@@ -14,7 +14,10 @@ class AppTheme {
     ),
     colorScheme: ColorScheme.light(
         primary: AppColor.blue,
-        inversePrimary: AppColor.blue
+        inversePrimary: AppColor.blue,
+        onPrimaryContainer: AppColor.lightGrey,
+        onPrimary: AppColor.white,
+        onPrimaryFixed: AppColor.disableGrey
     ),
 
     textTheme: TextTheme(
@@ -32,6 +35,7 @@ class AppTheme {
       labelSmall: AppStyle.med18Black,
       titleLarge: AppStyle.med16Black,
       titleMedium: AppStyle.reg12Blue,
+        titleSmall: AppStyle.semBold14Blue
     ),
   );
 
@@ -46,7 +50,13 @@ class AppTheme {
     ),
     colorScheme: ColorScheme.dark(
         primary: AppColor.lightBlue,
-        inversePrimary: AppColor.white
+        inversePrimary: AppColor.white,
+        onPrimaryContainer: AppColor.borderDarkBlue,
+        onPrimary: AppColor.darkBlue,
+        onPrimaryFixed: AppColor.backgroundLight
+
+
+
     ),
     textTheme: TextTheme(
       bodyLarge: AppStyle.semBold20White,
@@ -63,6 +73,8 @@ class AppTheme {
       labelSmall: AppStyle.med18White,
       titleLarge: AppStyle.med16White,
       titleMedium: AppStyle.reg12lightBlue,
+        titleSmall: AppStyle.semBold14White
+
     ),
   );
 }

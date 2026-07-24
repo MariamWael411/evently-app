@@ -4,6 +4,7 @@ import 'package:evently/providers/theme_provider.dart';
 import 'package:evently/ui/custom_elevated_button.dart';
 import 'package:evently/utils/app_color.dart';
 import 'package:evently/utils/app_image.dart';
+import 'package:evently/utils/app_route.dart';
 import 'package:evently/utils/config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_toggle_button/flutter_toggle_button.dart';
@@ -138,8 +139,15 @@ class _HomeState extends State<Home> {
                   )
                 ],
               ),
+              Spacer(),
               CustomElevatedButton(
-                  text: AppLocalizations.of(context)!.lets_start),
+                text: AppLocalizations.of(context)!.lets_start,
+                onClick: () {
+                  Navigator.of(context).pushReplacementNamed(
+                      AppRoute.introScreen);
+                },
+
+              ),
             ],
 
           ),
