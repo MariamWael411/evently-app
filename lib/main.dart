@@ -1,6 +1,7 @@
 import 'package:evently/providers/language_provider.dart';
 import 'package:evently/providers/theme_provider.dart';
 import 'package:evently/ui/Login/login_screen.dart';
+import 'package:evently/ui/Primary_screen/primary_screen.dart';
 import 'package:evently/ui/Register/register_screen.dart';
 import 'package:evently/ui/home.dart';
 import 'package:evently/ui/introduction_screen/introduction_screen2.dart';
@@ -42,6 +43,7 @@ class MyApp extends StatelessWidget {
         AppRoute.introScreen: (context) => IntroductionScreen2(),
         AppRoute.loginScreen: (context) => LoginScreen(),
         AppRoute.registerScreen: (context) => RegisterScreen(),
+        AppRoute.primaryScreen: (context) => PrimaryScreen(),
       },
     );
   }

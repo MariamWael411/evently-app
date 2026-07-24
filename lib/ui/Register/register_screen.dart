@@ -60,7 +60,10 @@ class RegisterScreen extends StatelessWidget {
 
                 CustomElevatedButton(
                   text: AppLocalizations.of(context)!.sign_up,
-                  onClick: () {},
+                  onClick: () {
+                    Navigator.of(context).pushReplacementNamed(
+                        AppRoute.primaryScreen);
+                  },
                 ),
 
                 Row(
