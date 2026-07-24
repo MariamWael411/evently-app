@@ -1,0 +1,30 @@
+class AppImage {
+  static const String _path = 'assets/images/';
+  static const String birthdayDark = '${_path}BirthdayDark.png';
+  static const String birthdayLight = '${_path}BirthdayLight.png';
+  static const String bookClubDark = '${_path}BookClubDark.png';
+  static const String bookClubLight = '${_path}BookClubLight.png';
+  static const String exhibitionDark = '${_path}ExhibitionDark.png';
+  static const String exhibitionLight = '${_path}ExhibitionLight.png';
+  static const String eyeSlash = '${_path}eye-slash.png';
+  static const String forgetPasswordDark = '${_path}ForgetPasswordDark.png';
+  static const String forgetPasswordLight = '${_path}ForgetPasswordLight.png';
+  static const String iconBlack = '${_path}iconBlack.png';
+  static const String iconLight = '${_path}iconLight.png';
+  static const String intro1Dark = '${_path}intro1Dark.png';
+  static const String intro1Light = '${_path}intro1Light.png';
+  static const String intro2Dark = '${_path}intro2Dark.png';
+  static const String intro2Light = '${_path}intro2Light.png';
+  static const String intro3Dark = '${_path}intro3Dark.png';
+  static const String intro3Light = '${_path}intro3Light.png';
+  static const String lock = '${_path}lock.png';
+  static const String mail = '${_path}mail.png';
+  static const String meetingDark = '${_path}MeetingDark.png';
+  static const String meetingLight = '${_path}MeetingLight.png';
+  static const String onBoardingDark = '${_path}onBoardingDark.png';
+  static const String onBoardingLight = '${_path}onBoardingLight.png';
+  static const String profile = '${_path}profile.png';
+  static const String profileImage = '${_path}profileImage.png';
+  static const String sportDark = '${_path}SportDark.png';
+  static const String sportLight = '${_path}SportLight.png';
+}

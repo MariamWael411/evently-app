@@ -1,0 +1,144 @@
+// ignore: unused_import
+import 'package:intl/intl.dart' as intl;
+
+import 'app_localizations.dart';
+
+// ignore_for_file: type=lint
+
+/// The translations for English (`en`).
+class AppLocalizationsEn extends AppLocalizations {
+  AppLocalizationsEn([String locale = 'en']) : super(locale);
+
+  @override
+  String get intro1_title => 'Personalize Your Experience';
+
+  @override
+  String get intro2_title => 'Find Events That Inspire You';
+
+  @override
+  String get intro3_title => 'Effortless Event Planning';
+
+  @override
+  String get intro4_title => 'Connect with Friends & Share Moments';
+
+  @override
+  String get intro1_body =>
+      'Choose your preferred theme and language to get started with a comfortable, tailored experience that suits your style.';
+
+  @override
+  String get intro2_body =>
+      'Dive into a world of events crafted to fit your unique interests. Whether you\'re into live music, art workshops, professional networking, or simply discovering new experiences, we have something for everyone. Our curated recommendations will help you explore, connect, and make the most of every opportunity around you.';
+
+  @override
+  String get intro3_body =>
+      'Take the hassle out of organizing events with our all-in-one planning tools. From setting up invites and managing RSVPs to scheduling reminders and coordinating details, we’ve got you covered. Plan with ease and focus on what matters – creating an unforgettable experience for you and your guests.';
+
+  @override
+  String get intro4_body =>
+      'Make every event memorable by sharing the experience with others. Our platform lets you invite friends, keep everyone in the loop, and celebrate moments together. Capture and share the excitement with your network, so you can relive the highlights and cherish the memories.';
+
+  @override
+  String get language => 'Language';
+
+  @override
+  String get theme => 'Theme';
+
+  @override
+  String get english => 'English';
+
+  @override
+  String get arabic => 'Arabic';
+
+  @override
+  String get lets_start => 'Let’s start';
+
+  @override
+  String get skip => 'Skip';
+
+  @override
+  String get next => 'Next';
+
+  @override
+  String get get_started => 'Get started';
+
+  @override
+  String get login_to_your_account => 'Login to your account';
+
+  @override
+  String get enter_your_email => 'Enter your email';
+
+  @override
+  String get enter_your_password => 'Enter your password';
+
+  @override
+  String get forget_passwordtwo => 'Forget Password?';
+
+  @override
+  String get login => 'Login';
+
+  @override
+  String get dont_have_an_account => 'Don’t have an account ?';
+
+  @override
+  String get signup => 'Signup';
+
+  @override
+  String get or => 'Or';
+
+  @override
+  String get login_with_google => 'Login with Google';
+
+  @override
+  String get enter_your_name => 'Enter your name';
+
+  @override
+  String get create_your_account => 'Create your account';
+
+  @override
+  String get confirm_your_password => 'Confirm your password';
+
+  @override
+  String get sign_up => 'Sign up';
+
+  @override
+  String get already_have_an_account => 'Already have an account?';
+
+  @override
+  String get sign_up_with_google => 'Sign up with Google';
+
+  @override
+  String get forget_password => 'Forget Password';
+
+  @override
+  String get reset_password => 'Reset password';
+
+  @override
+  String get welcome_back => 'Welcome Back ';
+
+  @override
+  String get birthday => 'This is a Birthday Party';
+
+  @override
+  String get meeting => 'Meeting for Updating The Development Method';
+
+  @override
+  String get exhibition => 'Discover Unique exhibitions and talents';
+
+  @override
+  String get home => 'Home';
+
+  @override
+  String get profile => 'profile';
+
+  @override
+  String get favorite => 'Favorite';
+
+  @override
+  String get dark_mode => 'Dark mode';
+
+  @override
+  String get logout => 'Logout';
+
+  @override
+  String get light_mode => 'Light mode';
+}
