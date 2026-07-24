@@ -12,6 +12,10 @@ class AppTheme {
       selectedLabelStyle: AppStyle.reg12Blue,
       unselectedLabelStyle: AppStyle.reg12disableGray,
     ),
+    colorScheme: ColorScheme.light(
+        primary: AppColor.blue,
+        inversePrimary: AppColor.blue
+    ),
 
     textTheme: TextTheme(
       bodyLarge: AppStyle.semBold20Black,
@@ -39,6 +43,10 @@ class AppTheme {
       unselectedItemColor: AppColor.disableGrey,
       selectedLabelStyle: AppStyle.reg12lightBlue,
       unselectedLabelStyle: AppStyle.reg12disableGray,
+    ),
+    colorScheme: ColorScheme.dark(
+        primary: AppColor.lightBlue,
+        inversePrimary: AppColor.white
     ),
     textTheme: TextTheme(
       bodyLarge: AppStyle.semBold20White,
