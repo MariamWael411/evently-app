@@ -186,4 +186,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get update_event => 'Update event';
+
+  @override
+  String get search_for_event => 'Search for event';
 }

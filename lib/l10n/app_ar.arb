@@ -56,5 +56,6 @@
   "choose_time": "اختر الوقت",
   "event_details": "تفاصيل الفعالية",
   "edit_event": "تعديل الفعالية",
-  "update_event": "تحديث الفعالية"
+  "update_event": "تحديث الفعالية",
+  "search_for_event": "ابحث عن فعالية"
 }

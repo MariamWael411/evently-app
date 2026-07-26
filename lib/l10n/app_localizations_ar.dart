@@ -186,4 +186,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get update_event => 'تحديث الفعالية';
+
+  @override
+  String get search_for_event => 'ابحث عن فعالية';
 }

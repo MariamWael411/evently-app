@@ -1,5 +1,5 @@
 import 'package:evently/l10n/app_localizations.dart';
-import 'package:evently/ui/Primary_screen/tabs/home_tab/container_item_widget.dart';
+import 'package:evently/ui/Primary_screen/tabs/home_tab/list_view_container.dart';
 import 'package:evently/ui/widgets/custom_list_view.dart';
 import 'package:evently/utils/app_style.dart';
 import 'package:evently/utils/config.dart';
@@ -73,12 +73,7 @@ class HomeScreen extends StatelessWidget {
               ),
 
               Expanded(
-                child: ListView.separated(
-                  itemBuilder: (context, index) => ContainerItemWidget(),
-                  separatorBuilder: (context, index) =>
-                      SizedBox(height: Config.height(context) * 0.02),
-                  itemCount: 20,
-                ),
+                child: ListViewContainer(),
               ),
             ],
           ),
