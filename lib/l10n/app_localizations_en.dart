@@ -1,5 +1,6 @@
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
+
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -112,16 +113,16 @@ class AppLocalizationsEn extends AppLocalizations {
   String get reset_password => 'Reset password';
 
   @override
-  String get welcome_back => 'Welcome Back ';
+  String get welcome_back => 'Welcome Back ✨';
 
   @override
-  String get birthday => 'This is a Birthday Party';
+  String get birthday => 'Birthday';
 
   @override
-  String get meeting => 'Meeting for Updating The Development Method';
+  String get meeting => 'Meeting';
 
   @override
-  String get exhibition => 'Discover Unique exhibitions and talents';
+  String get exhibition => 'Exhibition';
 
   @override
   String get home => 'Home';
@@ -140,4 +141,49 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get light_mode => 'Light mode';
+
+  @override
+  String get sport => 'Sport';
+
+  @override
+  String get all => 'All';
+
+  @override
+  String get add_event => 'Add event';
+
+  @override
+  String get book_club => 'Book club';
+
+  @override
+  String get title => 'Title';
+
+  @override
+  String get event_title => 'Event Title';
+
+  @override
+  String get description => 'Description';
+
+  @override
+  String get event_description => 'Event Description....';
+
+  @override
+  String get event_date => 'Event Date';
+
+  @override
+  String get event_time => 'Event Time';
+
+  @override
+  String get choose_date => 'Choose date';
+
+  @override
+  String get choose_time => 'Choose time';
+
+  @override
+  String get event_details => 'Event details';
+
+  @override
+  String get edit_event => 'Edit event';
+
+  @override
+  String get update_event => 'Update event';
 }

@@ -55,6 +55,11 @@ class AppStyle {
     color: AppColor.white,
     fontWeight: FontWeight.w500,
   );
+  static final TextStyle med20Black = GoogleFonts.poppins(
+    fontSize: 20,
+    color: AppColor.black,
+    fontWeight: FontWeight.w500,
+  );
 
   static final TextStyle semBold24Blue = GoogleFonts.poppins(
     fontSize: 24,

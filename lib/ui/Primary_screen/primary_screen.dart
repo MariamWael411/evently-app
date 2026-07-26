@@ -1,7 +1,7 @@
 import 'package:evently/l10n/app_localizations.dart';
-import 'package:evently/ui/Primary_screen/tabs/favorite_screen.dart';
-import 'package:evently/ui/Primary_screen/tabs/home_screen.dart';
-import 'package:evently/ui/Primary_screen/tabs/profile_screen.dart';
+import 'package:evently/ui/Primary_screen/tabs/favorite_tab/favorite_screen.dart';
+import 'package:evently/ui/Primary_screen/tabs/home_tab/home_screen.dart';
+import 'package:evently/ui/Primary_screen/tabs/profil_tab/profile_screen.dart';
 import 'package:evently/utils/app_color.dart';
 import 'package:evently/utils/config.dart';
 import 'package:flutter/material.dart';

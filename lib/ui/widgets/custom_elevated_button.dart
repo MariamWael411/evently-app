@@ -1,3 +1,4 @@
+import 'package:evently/utils/app_style.dart';
 import 'package:evently/utils/config.dart';
 import 'package:flutter/material.dart';
 
@@ -29,10 +30,7 @@ class CustomElevatedButton extends StatelessWidget {
           )
       ),
       onPressed: onClick,
-      child: (item == null) ? Text(text!, style: Theme
-          .of(context)
-          .textTheme
-          .displaySmall) : item,
+      child: (item == null) ? Text(text!, style: AppStyle.med20White) : item,
     );
   }
 }

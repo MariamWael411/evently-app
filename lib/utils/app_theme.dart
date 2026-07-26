@@ -17,6 +17,7 @@ class AppTheme {
         inversePrimary: AppColor.blue,
         onPrimaryContainer: AppColor.lightGrey,
         onPrimary: AppColor.white,
+        onSecondaryContainer: AppColor.backgroundLight,
         onPrimaryFixed: AppColor.disableGrey
     ),
 
@@ -26,7 +27,7 @@ class AppTheme {
       bodySmall: AppStyle.med18Blue,
         displayLarge: AppStyle.semBold14BlueUnderLine,
       displayMedium: AppStyle.reg14Blue,
-      displaySmall: AppStyle.med20White,
+        displaySmall: AppStyle.med20Black,
       headlineLarge: AppStyle.semBold24Blue,
       headlineMedium: AppStyle.reg14Gray,
       headlineSmall: AppStyle.semBold14Blue,
@@ -53,6 +54,8 @@ class AppTheme {
         inversePrimary: AppColor.white,
         onPrimaryContainer: AppColor.borderDarkBlue,
         onPrimary: AppColor.darkBlue,
+        onSecondaryContainer: AppColor.backgroundDark,
+
         onPrimaryFixed: AppColor.backgroundLight
 
 

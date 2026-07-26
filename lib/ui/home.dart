@@ -2,34 +2,24 @@ import 'package:evently/l10n/app_localizations.dart';
 import 'package:evently/providers/language_provider.dart';
 import 'package:evently/providers/theme_provider.dart';
 import 'package:evently/ui/widgets/custom_elevated_button.dart';
+import 'package:evently/ui/widgets/cutom_flutter_toggle.dart';
 import 'package:evently/utils/app_color.dart';
 import 'package:evently/utils/app_image.dart';
 import 'package:evently/utils/app_route.dart';
+import 'package:evently/utils/app_style.dart';
 import 'package:evently/utils/config.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_toggle_button/flutter_toggle_button.dart';
 import 'package:icon_plus/icon_plus.dart';
 import 'package:provider/provider.dart';
-
-
 class Home extends StatefulWidget {
   Home({super.key});
-
   @override
   State<Home> createState() => _HomeState();
 }
 
 class _HomeState extends State<Home> {
-
-
-
   @override
   Widget build(BuildContext context) {
-    Icon option1 = Icon(Bootstrap.sun_fill, color: AppColor.white,);
-    Icon option2 = Icon(Bootstrap.moon, color: Theme
-        .of(context)
-        .colorScheme
-        .inversePrimary,);
     var themeProvider = Provider.of<ThemeProvider>(context);
     var languageProvider = Provider.of<LanguageProvider>(context);
     return Scaffold(
@@ -61,41 +51,27 @@ class _HomeState extends State<Home> {
                       .of(context)
                       .textTheme
                       .bodySmall,),
-                  FlutterToggleButton(
-                    buttonTextFontSize: 14,
-                    enableTextFontWeight: FontWeight.w600,
-                    buttonColor: Theme
-                        .of(context)
-                        .colorScheme
-                        .primary,
-                    outerContainerColor: Colors.transparent,
-                    buttonWidth: Config.width(context) * 0.23,
-                    borderRadius: 10,
-                    buttonBorderColor: Theme
-                        .of(context)
-                        .colorScheme
-                        .primary,
-                    disableTextColor: Theme
-                        .of(context)
-                        .colorScheme
-                        .inversePrimary,
-                    buttonHeight: Config.width(context) * 0.12,
-
-                    items: [
-                      AppLocalizations.of(context)!.english,
-                      AppLocalizations.of(context)!.arabic
-                    ],
-                    onTap: (index) {
+                  CutomFlutterToggle(
+                    option1: Text(AppLocalizations.of(context)!.english,
+                      style: languageProvider.languageCode == 'en' ? AppStyle
+                          .semBold14White : Theme
+                          .of(context)
+                          .textTheme
+                          .displayMedium,),
+                    option2: Text(AppLocalizations.of(context)!.arabic,
+                        style: languageProvider.languageCode == 'ar' ? AppStyle
+                            .semBold14White : Theme
+                            .of(context)
+                            .textTheme
+                            .displayMedium),
+                    OnClick: (index) {
                       if (index == 0) {
                         languageProvider.changeLanguage('en');
                       } else {
                         languageProvider.changeLanguage('ar');
                       }
                     },
-
                   ),
-
-
                 ],
               ),
               Row(
@@ -105,38 +81,27 @@ class _HomeState extends State<Home> {
                       .of(context)
                       .textTheme
                       .bodySmall,),
-                  FlutterToggleButton(
-
-                    buttonColor: Theme
-                        .of(context)
-                        .colorScheme
-                        .primary,
-                    outerContainerColor: Colors.transparent,
-                    buttonWidth: Config.width(context) * 0.23,
-                    borderRadius: 10,
-                    buttonHeight: Config.width(context) * 0.12,
-                    items: [
-                      themeProvider.isDark() ? Icon(Bootstrap.sun, color: Theme
+                  CutomFlutterToggle(
+                      option1: themeProvider.isDark() ? Icon(
+                        Bootstrap.sun, color: Theme
                           .of(context)
                           .colorScheme
                           .inversePrimary,) : Icon(
                         Bootstrap.sun_fill, color: AppColor.white,),
-                      themeProvider.isDark() ? Icon(
+                      option2: themeProvider.isDark() ? Icon(
                         Bootstrap.moon_fill, color: AppColor.white,) : Icon(
                         Bootstrap.moon, color: Theme
                           .of(context)
                           .colorScheme
-                          .inversePrimary,)
-                    ],
-                    onTap: (index) {
-                      if (index == 0) {
-                        themeProvider.changeThemeToDark(ThemeMode.light);
-                      } else {
-                        themeProvider.changeThemeToDark(ThemeMode.dark);
+                          .inversePrimary,),
+                      OnClick: (index) {
+                        if (index == 0) {
+                          themeProvider.changeThemeToDark(ThemeMode.light);
+                        } else {
+                          themeProvider.changeThemeToDark(ThemeMode.dark);
+                        }
                       }
-                    },
-
-                  )
+                  ),
                 ],
               ),
               Spacer(),

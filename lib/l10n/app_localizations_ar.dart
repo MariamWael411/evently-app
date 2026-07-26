@@ -1,5 +1,6 @@
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
+
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -12,13 +13,13 @@ class AppLocalizationsAr extends AppLocalizations {
   String get intro1_title => 'خصص تجربتك';
 
   @override
-  String get intro2_title => 'اعثر على فعاليات تلهمك';
+  String get intro2_title => 'اعثر على الفعاليات التي تلهمك';
 
   @override
   String get intro3_title => 'تخطيط الفعاليات بكل سهولة';
 
   @override
-  String get intro4_title => 'تواصل مع أصدقائك وشارك اللحظات';
+  String get intro4_title => 'تواصل مع الأصدقاء وشارك اللحظات';
 
   @override
   String get intro1_body =>
@@ -26,15 +27,15 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get intro2_body =>
-      'انطلق إلى عالم من الفعاليات المصممة لتناسب اهتماماتك. سواء كنت من محبي الموسيقى الحية، أو ورش العمل الفنية، أو اللقاءات المهنية، أو ترغب فقط في اكتشاف تجارب جديدة، ستجد ما يناسبك. ستساعدك توصياتنا المختارة بعناية على الاستكشاف والتواصل والاستفادة القصوى من كل فرصة من حولك.';
+      'استكشف عالمًا من الفعاليات المصممة لتناسب اهتماماتك. سواء كنت من محبي الموسيقى الحية، أو ورش العمل الفنية، أو اللقاءات المهنية، أو ترغب فقط في اكتشاف تجارب جديدة، ستجد ما يناسبك. ستساعدك توصياتنا المختارة بعناية على الاستكشاف والتواصل والاستفادة من كل فرصة من حولك.';
 
   @override
   String get intro3_body =>
-      'تخلص من عناء تنظيم الفعاليات باستخدام أدوات التخطيط المتكاملة لدينا. بدءًا من إرسال الدعوات وإدارة تأكيدات الحضور، وصولًا إلى جدولة التذكيرات وتنسيق جميع التفاصيل، نوفر لك كل ما تحتاجه. خطط بسهولة وركز على صنع تجربة لا تُنسى لك ولضيوفك.';
+      'تخلص من عناء تنظيم الفعاليات باستخدام أدوات التخطيط الشاملة لدينا. من إرسال الدعوات وإدارة تأكيدات الحضور إلى جدولة التذكيرات وتنسيق التفاصيل، نوفر لك كل ما تحتاجه. خطط بسهولة وركز على صنع تجربة لا تُنسى لك ولضيوفك.';
 
   @override
   String get intro4_body =>
-      'اجعل كل فعالية ذكرى مميزة من خلال مشاركتها مع الآخرين. تتيح لك منصتنا دعوة الأصدقاء، وإبقائهم على اطلاع، والاحتفال باللحظات معًا. شارك الحماس مع شبكتك واستمتع باستعادة أجمل الذكريات.';
+      'اجعل كل فعالية ذكرى مميزة من خلال مشاركتها مع الآخرين. تتيح لك منصتنا دعوة الأصدقاء، وإبقائهم على اطلاع دائم، والاحتفال باللحظات معًا. شارك أجمل اللحظات مع من تحب لتستعيد الذكريات وتحتفظ بها.';
 
   @override
   String get language => 'اللغة';
@@ -49,7 +50,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get arabic => 'العربية';
 
   @override
-  String get lets_start => 'لنبدأ';
+  String get lets_start => 'هيا نبدأ';
 
   @override
   String get skip => 'تخطي';
@@ -70,7 +71,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get enter_your_password => 'أدخل كلمة المرور';
 
   @override
-  String get forget_passwordtwo => 'هل نسيت كلمة المرور؟';
+  String get forget_passwordtwo => 'نسيت كلمة المرور؟';
 
   @override
   String get login => 'تسجيل الدخول';
@@ -85,7 +86,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get or => 'أو';
 
   @override
-  String get login_with_google => 'تسجيل الدخول باستخدام Google';
+  String get login_with_google => 'تسجيل الدخول باستخدام جوجل';
 
   @override
   String get enter_your_name => 'أدخل اسمك';
@@ -103,7 +104,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get already_have_an_account => 'لديك حساب بالفعل؟';
 
   @override
-  String get sign_up_with_google => 'إنشاء حساب باستخدام Google';
+  String get sign_up_with_google => 'إنشاء حساب باستخدام جوجل';
 
   @override
   String get forget_password => 'نسيت كلمة المرور';
@@ -112,16 +113,16 @@ class AppLocalizationsAr extends AppLocalizations {
   String get reset_password => 'إعادة تعيين كلمة المرور';
 
   @override
-  String get welcome_back => 'مرحبًا بعودتك';
+  String get welcome_back => 'مرحبًا بعودتك ✨';
 
   @override
-  String get birthday => 'هذه حفلة عيد ميلاد';
+  String get birthday => 'عيد ميلاد';
 
   @override
-  String get meeting => 'اجتماع لتحديث أسلوب التطوير';
+  String get meeting => 'اجتماع';
 
   @override
-  String get exhibition => 'اكتشف معارض ومواهب مميزة';
+  String get exhibition => 'معرض';
 
   @override
   String get home => 'الرئيسية';
@@ -140,4 +141,49 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get light_mode => 'الوضع الفاتح';
+
+  @override
+  String get sport => 'رياضة';
+
+  @override
+  String get all => 'الكل';
+
+  @override
+  String get add_event => 'إضافة فعالية';
+
+  @override
+  String get book_club => 'نادي الكتاب';
+
+  @override
+  String get title => 'العنوان';
+
+  @override
+  String get event_title => 'عنوان الفعالية';
+
+  @override
+  String get description => 'الوصف';
+
+  @override
+  String get event_description => 'وصف الفعالية...';
+
+  @override
+  String get event_date => 'تاريخ الفعالية';
+
+  @override
+  String get event_time => 'وقت الفعالية';
+
+  @override
+  String get choose_date => 'اختر التاريخ';
+
+  @override
+  String get choose_time => 'اختر الوقت';
+
+  @override
+  String get event_details => 'تفاصيل الفعالية';
+
+  @override
+  String get edit_event => 'تعديل الفعالية';
+
+  @override
+  String get update_event => 'تحديث الفعالية';
 }
