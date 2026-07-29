@@ -9,11 +9,13 @@ class CustomTextFormFeild extends StatelessWidget {
   String hintText;
 
   Icon? prefixIcon;
-  Icon? sufixIcon;
+  Widget? sufixIcon;
   int maxLines;
   OnChanged? onChanged;
   TextEditingController? controller;
   OnValidator? onValidator;
+  TextInputType? textInputType;
+  bool obscureText;
 
   CustomTextFormFeild({
     super.key,
@@ -23,12 +25,17 @@ class CustomTextFormFeild extends StatelessWidget {
     this.maxLines = 1,
     this.controller,
     this.onChanged,
-    this.onValidator
+    this.onValidator,
+    this.textInputType = TextInputType.text,
+    this.obscureText = false
   });
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      keyboardType: textInputType,
+      obscureText: obscureText,
+      obscuringCharacter: '*',
       onChanged: onChanged,
       validator: onValidator,
       controller: controller,

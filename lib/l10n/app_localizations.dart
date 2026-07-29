@@ -451,6 +451,60 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Search for event'**
   String get search_for_event;
+
+  /// No description provided for @please_enter_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Please Enter Title'**
+  String get please_enter_title;
+
+  /// No description provided for @please_enter_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Please Enter Description'**
+  String get please_enter_description;
+
+  /// No description provided for @please_enter_email.
+  ///
+  /// In en, this message translates to:
+  /// **'Please Enter Email'**
+  String get please_enter_email;
+
+  /// No description provided for @please_enter_password.
+  ///
+  /// In en, this message translates to:
+  /// **'Please Enter Password'**
+  String get please_enter_password;
+
+  /// No description provided for @please_enter_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Please Enter Name'**
+  String get please_enter_name;
+
+  /// No description provided for @please_enter_confirm_password.
+  ///
+  /// In en, this message translates to:
+  /// **'Please Enter Confirm Password'**
+  String get please_enter_confirm_password;
+
+  /// No description provided for @please_enter_valid_Email.
+  ///
+  /// In en, this message translates to:
+  /// **'Please Enter Valid Email'**
+  String get please_enter_valid_Email;
+
+  /// No description provided for @password_should_be_at_least_6_chars.
+  ///
+  /// In en, this message translates to:
+  /// **'Password Should be at least 6 chars'**
+  String get password_should_be_at_least_6_chars;
+
+  /// No description provided for @repassword_doesnt_math_password.
+  ///
+  /// In en, this message translates to:
+  /// **'rePassword doesn\'t math Password'**
+  String get repassword_doesnt_math_password;
 }
 
 class _AppLocalizationsDelegate
