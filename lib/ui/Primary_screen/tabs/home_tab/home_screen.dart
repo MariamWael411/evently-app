@@ -1,6 +1,6 @@
 import 'package:evently/l10n/app_localizations.dart';
+import 'package:evently/ui/Primary_screen/tabs/home_tab/custom_list_view.dart';
 import 'package:evently/ui/Primary_screen/tabs/home_tab/list_view_container.dart';
-import 'package:evently/ui/widgets/custom_list_view.dart';
 import 'package:evently/utils/app_style.dart';
 import 'package:evently/utils/config.dart';
 import 'package:flutter/material.dart';
@@ -48,7 +48,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                   Spacer(),
                   Icon(
-                    Bootstrap.sun,
+                    themeProvider.isDark() ? Bootstrap.moon : Bootstrap.sun,
                     color: Theme.of(context).colorScheme.primary,
                   ),
                   Container(
@@ -69,7 +69,7 @@ class HomeScreen extends StatelessWidget {
               ),
               SizedBox(
                 height: Config.height(context) * 0.06,
-                child: CustomListView(axis: Axis.horizontal),
+                child: CustomListView(),
               ),
 
               Expanded(

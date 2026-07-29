@@ -7,9 +7,11 @@ class CustomElevatedButton extends StatelessWidget {
   VoidCallback onClick;
   Widget? item;
   Color? backgroundColor;
+  Color borderColor;
 
   CustomElevatedButton(
-      {super.key, this.backgroundColor, this.text, required this.onClick, this.item});
+      {super.key, this.backgroundColor, this.text, required this.onClick, this.item, this.borderColor = Colors
+          .transparent});
 
   @override
   Widget build(BuildContext context) {
@@ -22,10 +24,7 @@ class CustomElevatedButton extends StatelessWidget {
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
         padding: EdgeInsets.symmetric(vertical: Config.height(context) * 0.017),
           side: BorderSide(
-              color: Theme
-                  .of(context)
-                  .colorScheme
-                  .onPrimaryContainer,
+              color: borderColor,
               width: 2
           )
       ),

@@ -117,7 +117,12 @@ class LoginScreen extends StatelessWidget {
                       height: Config.height(context) * 0.001,
                     ),
 
-                    CustomElevatedButton(onClick: () {}, backgroundColor: Theme
+                    CustomElevatedButton(onClick: () {},
+                      borderColor: Theme
+                          .of(context)
+                          .colorScheme
+                          .onPrimaryContainer,
+                      backgroundColor: Theme
                         .of(context)
                         .colorScheme
                         .onPrimary, item: Row(

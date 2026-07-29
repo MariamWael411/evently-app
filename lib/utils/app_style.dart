@@ -29,6 +29,11 @@ class AppStyle {
     color: AppColor.blue,
     fontWeight: FontWeight.w500,
   );
+  static final TextStyle med14Red = GoogleFonts.poppins(
+    fontSize: 14,
+    color: AppColor.red,
+    fontWeight: FontWeight.w500,
+  );
   static final TextStyle med18White = GoogleFonts.poppins(
     fontSize: 18,
     color: AppColor.white,

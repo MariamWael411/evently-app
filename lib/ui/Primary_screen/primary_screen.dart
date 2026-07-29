@@ -3,6 +3,7 @@ import 'package:evently/ui/Primary_screen/tabs/favorite_tab/favorite_screen.dart
 import 'package:evently/ui/Primary_screen/tabs/home_tab/home_screen.dart';
 import 'package:evently/ui/Primary_screen/tabs/profil_tab/profile_screen.dart';
 import 'package:evently/utils/app_color.dart';
+import 'package:evently/utils/app_route.dart';
 import 'package:evently/utils/config.dart';
 import 'package:flutter/material.dart';
 import 'package:icon_plus/icon_plus.dart';
@@ -29,7 +30,9 @@ class _PrimaryScreenState extends State<PrimaryScreen> {
             bottom: Config.height(context) * 0.04,
             right: Config.width(context) * 0.05,
             child: ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).pushNamed(AppRoute.addEventScreen);
+              },
               style: ElevatedButton.styleFrom(
                 padding: EdgeInsets.all(Config.width(context) * 0.05),
                 shape: StadiumBorder(),

@@ -57,5 +57,7 @@
   "event_details": "تفاصيل الفعالية",
   "edit_event": "تعديل الفعالية",
   "update_event": "تحديث الفعالية",
-  "search_for_event": "ابحث عن فعالية"
+  "search_for_event": "ابحث عن فعالية",
+  "please_enter_title": "يرجى إدخال العنوان",
+  "please_enter_description": "يرجى إدخال الوصف"
 }

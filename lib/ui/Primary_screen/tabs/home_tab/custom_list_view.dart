@@ -2,12 +2,13 @@ import 'package:evently/l10n/app_localizations.dart';
 import 'package:evently/ui/Primary_screen/tabs/home_tab/tab_item_widget.dart';
 import 'package:evently/utils/config.dart';
 import 'package:flutter/material.dart';
-import 'package:icon_plus/icon_plus.dart';
+
+import '../../../../model/model_app.dart';
 
 class CustomListView extends StatefulWidget {
-  CustomListView({super.key, required this.axis});
+  CustomListView({super.key,});
 
-  Axis axis;
+
 
   @override
   State<CustomListView> createState() => _CustomListViewState();
@@ -15,23 +16,6 @@ class CustomListView extends StatefulWidget {
 
 class _CustomListViewState extends State<CustomListView> {
   List<String> titles = [];
-
-  List<IconData> unSelectedIcons = [
-    Bootstrap.grid,
-    Bootstrap.bicycle,
-    Bootstrap.cake,
-    Bootstrap.calendar,
-    Bootstrap.book,
-    Bootstrap.image,
-  ];
-  List<IconData> selectedIcons = [
-    Bootstrap.grid_3x3_gap_fill,
-    Bootstrap.bicycle,
-    Bootstrap.cake_fill,
-    Bootstrap.calendar_fill,
-    Bootstrap.book_fill,
-    Bootstrap.image_fill,
-  ];
 
   int currentIndex = 0;
 
@@ -47,7 +31,7 @@ class _CustomListViewState extends State<CustomListView> {
     ];
 
     return ListView.separated(
-      scrollDirection: widget.axis,
+      scrollDirection: Axis.horizontal,
       itemBuilder: (context, index) => InkWell(
         onTap: () {
           currentIndex = index;
@@ -56,8 +40,8 @@ class _CustomListViewState extends State<CustomListView> {
         child: TabItemWidget(
           isSelected: currentIndex == index,
           icon: currentIndex == index
-              ? selectedIcons[index]
-              : unSelectedIcons[index],
+              ? ModelApp.selectedIcons[index]
+              : ModelApp.unSelectedIcons[index],
           text: titles[index],
         ),
       ),

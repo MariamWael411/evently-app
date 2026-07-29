@@ -113,6 +113,10 @@ class RegisterScreen extends StatelessWidget {
 
                 CustomElevatedButton(
                   onClick: () {},
+                  borderColor: Theme
+                      .of(context)
+                      .colorScheme
+                      .onPrimaryContainer,
                   backgroundColor: Theme.of(context).colorScheme.onPrimary,
                   item: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
