@@ -1,4 +1,5 @@
 import 'package:evently/l10n/app_localizations.dart';
+import 'package:evently/providers/user_provider.dart';
 import 'package:evently/ui/Primary_screen/tabs/home_tab/custom_list_view.dart';
 import 'package:evently/ui/Primary_screen/tabs/home_tab/list_view_container.dart';
 import 'package:evently/utils/app_style.dart';
@@ -16,6 +17,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var themeProvider = Provider.of<ThemeProvider>(context);
+    var userProvider = Provider.of<UserProvider>(context);
     var languageProvider = Provider.of<LanguageProvider>(context);
 
     return Scaffold(
@@ -41,7 +43,7 @@ class HomeScreen extends StatelessWidget {
                       ),
 
                       Text(
-                        'John Safwat',
+                        userProvider.myUser!.name,
                         style: Theme.of(context).textTheme.displaySmall,
                       ),
                     ],

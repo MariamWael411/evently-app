@@ -505,6 +505,54 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'rePassword doesn\'t math Password'**
   String get repassword_doesnt_math_password;
+
+  /// No description provided for @loading.
+  ///
+  /// In en, this message translates to:
+  /// **'Loading...'**
+  String get loading;
+
+  /// No description provided for @login_successfully.
+  ///
+  /// In en, this message translates to:
+  /// **'Login Successfully'**
+  String get login_successfully;
+
+  /// No description provided for @success.
+  ///
+  /// In en, this message translates to:
+  /// **'Success'**
+  String get success;
+
+  /// No description provided for @ok.
+  ///
+  /// In en, this message translates to:
+  /// **'ok'**
+  String get ok;
+
+  /// No description provided for @email_or_password_is_incorrect.
+  ///
+  /// In en, this message translates to:
+  /// **'Email or Password is incorrect'**
+  String get email_or_password_is_incorrect;
+
+  /// No description provided for @error.
+  ///
+  /// In en, this message translates to:
+  /// **'Error'**
+  String get error;
+
+  /// No description provided for @register_successfully.
+  ///
+  /// In en, this message translates to:
+  /// **'Register Successfully'**
+  String get register_successfully;
+
+  /// No description provided for @the_account_already_exists_for_that_email.
+  ///
+  /// In en, this message translates to:
+  /// **'The account already exists for that email'**
+  String get the_account_already_exists_for_that_email;
 }
 
 class _AppLocalizationsDelegate

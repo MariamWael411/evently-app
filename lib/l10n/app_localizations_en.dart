@@ -218,4 +218,29 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get repassword_doesnt_math_password =>
       'rePassword doesn\'t math Password';
+
+  @override
+  String get loading => 'Loading...';
+
+  @override
+  String get login_successfully => 'Login Successfully';
+
+  @override
+  String get success => 'Success';
+
+  @override
+  String get ok => 'ok';
+
+  @override
+  String get email_or_password_is_incorrect => 'Email or Password is incorrect';
+
+  @override
+  String get error => 'Error';
+
+  @override
+  String get register_successfully => 'Register Successfully';
+
+  @override
+  String get the_account_already_exists_for_that_email =>
+      'The account already exists for that email';
 }

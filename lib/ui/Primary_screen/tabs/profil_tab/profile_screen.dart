@@ -2,11 +2,13 @@ import 'package:evently/l10n/app_localizations.dart';
 import 'package:evently/ui/Dialog_language/dialog_language.dart';
 import 'package:evently/utils/app_color.dart';
 import 'package:evently/utils/app_image.dart';
+import 'package:evently/utils/app_route.dart';
 import 'package:evently/utils/config.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../../../providers/theme_provider.dart';
+import '../../../../providers/user_provider.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -19,6 +21,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     var themeProvider = Provider.of<ThemeProvider>(context);
+    var userProvider = Provider.of<UserProvider>(context);
+
 
     return Scaffold(
       body: SafeArea(
@@ -27,9 +31,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
           children: [
             SizedBox(height: Config.height(context) * 0.03),
             Image.asset(AppImage.profileImage),
-            Text('John Safwat', style: Theme.of(context).textTheme.bodyLarge),
+            Text(userProvider.myUser!.name, style: Theme
+                .of(context)
+                .textTheme
+                .bodyLarge),
             Text(
-              'johnsafwat.route@gmail.com',
+              userProvider.myUser!.email,
               style: Theme.of(context).textTheme.headlineMedium,
             ),
             container(
@@ -78,7 +85,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
             container(
               AppLocalizations.of(context)!.logout,
               IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).pushNamedAndRemoveUntil(
+                    AppRoute.loginScreen, (route) => false,);
+                },
                 icon: Icon(Icons.logout_sharp, color: AppColor.red),
               ),
             ),

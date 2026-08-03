@@ -59,5 +59,21 @@
   "update_event": "تحديث الفعالية",
   "search_for_event": "ابحث عن فعالية",
   "please_enter_title": "يرجى إدخال العنوان",
-  "please_enter_description": "يرجى إدخال الوصف"
+  "please_enter_description": "يرجى إدخال الوصف",
+  "please_enter_email": "من فضلك أدخل البريد الإلكتروني",
+  "please_enter_password": "من فضلك أدخل كلمة المرور",
+  "please_enter_name": "من فضلك أدخل الاسم",
+  "please_enter_confirm_password": "من فضلك أدخل تأكيد كلمة المرور",
+  "please_enter_valid_Email": "من فضلك أدخل بريدًا إلكترونيًا صحيحًا",
+  "password_should_be_at_least_6_chars": "يجب أن تتكون كلمة المرور من 6 أحرف على الأقل",
+  "repassword_doesnt_math_password": "تأكيد كلمة المرور غير مطابق لكلمة المرور",
+  "loading": "جاري التحميل...",
+  "login_successfully": "تم تسجيل الدخول بنجاح",
+  "success": "نجاح",
+  "ok": "حسنًا",
+  "email_or_password_is_incorrect": "البريد الإلكتروني أو كلمة المرور غير صحيحة",
+  "error": "خطأ",
+  "register_successfully": "تم إنشاء الحساب بنجاح",
+  "the_account_already_exists_for_that_email": "يوجد حساب بالفعل مرتبط بهذا البريد الإلكتروني"
+
 }

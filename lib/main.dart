@@ -1,5 +1,6 @@
 import 'package:evently/providers/language_provider.dart';
 import 'package:evently/providers/theme_provider.dart';
+import 'package:evently/providers/user_provider.dart';
 import 'package:evently/ui/Login/login_screen.dart';
 import 'package:evently/ui/Primary_screen/primary_screen.dart';
 import 'package:evently/ui/Register/register_screen.dart';
@@ -8,15 +9,22 @@ import 'package:evently/ui/home.dart';
 import 'package:evently/ui/introduction_screen/introduction_screen2.dart';
 import 'package:evently/utils/app_route.dart';
 import 'package:evently/utils/app_theme.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import 'firebase_options.dart';
 import 'l10n/app_localizations.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(
     MultiProvider(
       providers: [
+        ChangeNotifierProvider(create: (context) => UserProvider(),),
         ChangeNotifierProvider(create: (context) => LanguageProvider()),
         ChangeNotifierProvider(create: (context) => ThemeProvider()),
       ],

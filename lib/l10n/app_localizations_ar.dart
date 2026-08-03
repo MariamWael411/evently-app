@@ -197,25 +197,52 @@ class AppLocalizationsAr extends AppLocalizations {
   String get please_enter_description => 'يرجى إدخال الوصف';
 
   @override
-  String get please_enter_email => 'Please Enter Email';
+  String get please_enter_email => 'من فضلك أدخل البريد الإلكتروني';
 
   @override
-  String get please_enter_password => 'Please Enter Password';
+  String get please_enter_password => 'من فضلك أدخل كلمة المرور';
 
   @override
-  String get please_enter_name => 'Please Enter Name';
+  String get please_enter_name => 'من فضلك أدخل الاسم';
 
   @override
-  String get please_enter_confirm_password => 'Please Enter Confirm Password';
+  String get please_enter_confirm_password => 'من فضلك أدخل تأكيد كلمة المرور';
 
   @override
-  String get please_enter_valid_Email => 'Please Enter Valid Email';
+  String get please_enter_valid_Email =>
+      'من فضلك أدخل بريدًا إلكترونيًا صحيحًا';
 
   @override
   String get password_should_be_at_least_6_chars =>
-      'Password Should be at least 6 chars';
+      'يجب أن تتكون كلمة المرور من 6 أحرف على الأقل';
 
   @override
   String get repassword_doesnt_math_password =>
-      'rePassword doesn\'t math Password';
+      'تأكيد كلمة المرور غير مطابق لكلمة المرور';
+
+  @override
+  String get loading => 'جاري التحميل...';
+
+  @override
+  String get login_successfully => 'تم تسجيل الدخول بنجاح';
+
+  @override
+  String get success => 'نجاح';
+
+  @override
+  String get ok => 'حسنًا';
+
+  @override
+  String get email_or_password_is_incorrect =>
+      'البريد الإلكتروني أو كلمة المرور غير صحيحة';
+
+  @override
+  String get error => 'خطأ';
+
+  @override
+  String get register_successfully => 'تم إنشاء الحساب بنجاح';
+
+  @override
+  String get the_account_already_exists_for_that_email =>
+      'يوجد حساب بالفعل مرتبط بهذا البريد الإلكتروني';
 }

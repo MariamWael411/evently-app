@@ -66,5 +66,13 @@
   "please_enter_confirm_password": "Please Enter Confirm Password",
   "please_enter_valid_Email": "Please Enter Valid Email",
   "password_should_be_at_least_6_chars": "Password Should be at least 6 chars",
-  "repassword_doesnt_math_password": "rePassword doesn't math Password"
+  "repassword_doesnt_math_password": "rePassword doesn't math Password",
+  "loading": "Loading...",
+  "login_successfully": "Login Successfully",
+  "success": "Success",
+  "ok": "ok",
+  "email_or_password_is_incorrect": "Email or Password is incorrect",
+  "error": "Error",
+  "register_successfully": "Register Successfully",
+  "the_account_already_exists_for_that_email": "The account already exists for that email"
 }
