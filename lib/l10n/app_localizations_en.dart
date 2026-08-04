@@ -243,4 +243,16 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get the_account_already_exists_for_that_email =>
       'The account already exists for that email';
+
+  @override
+  String get event_added_successfully => 'Event Added Successfully';
+
+  @override
+  String get no_event_found_yet => 'No event Found yet';
+
+  @override
+  String get event_udate_successfully => 'Event Updated Successfully';
+
+  @override
+  String get no_favorite_events => 'No Favorite Events';
 }

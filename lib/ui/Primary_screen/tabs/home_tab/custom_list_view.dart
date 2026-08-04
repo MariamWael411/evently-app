@@ -1,14 +1,18 @@
 import 'package:evently/l10n/app_localizations.dart';
+import 'package:evently/providers/event_provider.dart';
 import 'package:evently/ui/Primary_screen/tabs/home_tab/tab_item_widget.dart';
 import 'package:evently/utils/config.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../../../../model/model_app.dart';
 
+typedef OnTap = void Function(int);
+
 class CustomListView extends StatefulWidget {
-  CustomListView({super.key,});
+  CustomListView({super.key, required this.onTap});
 
-
+  OnTap onTap;
 
   @override
   State<CustomListView> createState() => _CustomListViewState();
@@ -18,9 +22,11 @@ class _CustomListViewState extends State<CustomListView> {
   List<String> titles = [];
 
   int currentIndex = 0;
+  late EventProvider eventProvider;
 
   @override
   Widget build(BuildContext context) {
+    eventProvider = Provider.of<EventProvider>(context);
     titles = [
       AppLocalizations.of(context)!.all,
       AppLocalizations.of(context)!.sport,
@@ -34,12 +40,12 @@ class _CustomListViewState extends State<CustomListView> {
       scrollDirection: Axis.horizontal,
       itemBuilder: (context, index) => InkWell(
         onTap: () {
-          currentIndex = index;
+          widget.onTap(index);
           setState(() {});
         },
         child: TabItemWidget(
-          isSelected: currentIndex == index,
-          icon: currentIndex == index
+          isSelected: eventProvider.currentIndex == index,
+          icon: eventProvider.currentIndex == index
               ? ModelApp.selectedIcons[index]
               : ModelApp.unSelectedIcons[index],
           text: titles[index],

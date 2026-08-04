@@ -13,6 +13,11 @@ class AppStyle {
     color: AppColor.white,
     fontWeight: FontWeight.w700,
   );
+  static final TextStyle semBold16White = GoogleFonts.poppins(
+    fontSize: 16,
+    color: AppColor.white,
+    fontWeight: FontWeight.w700,
+  );
 
   static final TextStyle reg16Gray = GoogleFonts.poppins(
     fontSize: 16,

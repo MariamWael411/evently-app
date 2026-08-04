@@ -1,3 +1,4 @@
+import 'package:evently/providers/event_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -16,11 +17,11 @@ class ListViewAddEventWidget extends StatefulWidget {
 
 class _ListViewAddEventWidgetState extends State<ListViewAddEventWidget> {
   List<String> titles = [];
-  int currentIndex = 0;
 
   @override
   Widget build(BuildContext context) {
     var themeProvider = Provider.of<ThemeProvider>(context);
+    var eventProvider = Provider.of<EventProvider>(context);
 
     titles = [
       AppLocalizations.of(context)!.sport,
@@ -45,8 +46,8 @@ class _ListViewAddEventWidgetState extends State<ListViewAddEventWidget> {
             image: DecorationImage(
               image: AssetImage(
                 themeProvider.isDark()
-                    ? ModelApp.imagesDark[currentIndex]
-                    : ModelApp.imagesLight[currentIndex],
+                    ? ModelApp.imagesDark[eventProvider.currentIndex]
+                    : ModelApp.imagesLight[eventProvider.currentIndex],
               ),
               fit: BoxFit.fill,
             ),
@@ -58,12 +59,12 @@ class _ListViewAddEventWidgetState extends State<ListViewAddEventWidget> {
             scrollDirection: Axis.horizontal,
             itemBuilder: (context, index) => InkWell(
               onTap: () {
-                currentIndex = index;
+                eventProvider.changeIndex(index);
                 setState(() {});
               },
               child: TabItemWidget(
-                isSelected: currentIndex == index,
-                icon: currentIndex == index
+                isSelected: eventProvider.currentIndex == index,
+                icon: eventProvider.currentIndex == index
                     ? ModelApp.selectedIcons[index + 1]
                     : ModelApp.unSelectedIcons[index + 1],
                 text: titles[index],

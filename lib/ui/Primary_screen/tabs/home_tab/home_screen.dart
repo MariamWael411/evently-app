@@ -1,7 +1,10 @@
+import 'package:evently/firebase_utils.dart';
 import 'package:evently/l10n/app_localizations.dart';
+import 'package:evently/model/event.dart';
+import 'package:evently/providers/event_provider.dart';
 import 'package:evently/providers/user_provider.dart';
 import 'package:evently/ui/Primary_screen/tabs/home_tab/custom_list_view.dart';
-import 'package:evently/ui/Primary_screen/tabs/home_tab/list_view_container.dart';
+import 'package:evently/ui/Primary_screen/tabs/home_tab/stream_builder_widget.dart';
 import 'package:evently/utils/app_style.dart';
 import 'package:evently/utils/config.dart';
 import 'package:flutter/material.dart';
@@ -11,13 +14,47 @@ import 'package:provider/provider.dart';
 import '../../../../providers/language_provider.dart';
 import '../../../../providers/theme_provider.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class HomeScreen extends StatefulWidget {
+  HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  List<Event> eventList = [];
+  Stream<List<Event>>? stream;
+  late var userProvider;
+  late EventProvider eventProvider;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      stream = FirebaseUtils.getAllEvent(userProvider: userProvider);
+      eventProvider.changeIndex(0);
+    });
+  }
+
+  void updateEvent(int index) {
+    eventProvider.changeIndex(index);
+    if (eventProvider.currentIndex == 0) {
+      stream = FirebaseUtils.getAllEvent(userProvider: userProvider);
+    } else {
+      stream = FirebaseUtils.getFilterEvent(
+        userProvider: userProvider,
+        selectedIndex: index,
+      );
+    }
+    setState(() {});
+  }
 
   @override
   Widget build(BuildContext context) {
+    eventProvider = Provider.of<EventProvider>(context);
+
     var themeProvider = Provider.of<ThemeProvider>(context);
-    var userProvider = Provider.of<UserProvider>(context);
+    userProvider = Provider.of<UserProvider>(context);
     var languageProvider = Provider.of<LanguageProvider>(context);
 
     return Scaffold(
@@ -71,11 +108,18 @@ class HomeScreen extends StatelessWidget {
               ),
               SizedBox(
                 height: Config.height(context) * 0.06,
-                child: CustomListView(),
+                child: Padding(
+                  padding: EdgeInsets.only(top: Config.height(context) * 0.01),
+                  child: CustomListView(onTap: updateEvent),
+                ),
               ),
 
               Expanded(
-                child: ListViewContainer(),
+                child: StreamBuilderWidget(
+                  eventList: eventList,
+                  stream: stream,
+                  text: AppLocalizations.of(context)!.no_event_found_yet,
+                ),
               ),
             ],
           ),

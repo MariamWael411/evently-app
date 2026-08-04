@@ -74,5 +74,9 @@
   "email_or_password_is_incorrect": "Email or Password is incorrect",
   "error": "Error",
   "register_successfully": "Register Successfully",
-  "the_account_already_exists_for_that_email": "The account already exists for that email"
+  "the_account_already_exists_for_that_email": "The account already exists for that email",
+  "event_added_successfully": "Event Added Successfully",
+  "no_event_found_yet": "No event Found yet",
+  "event_udate_successfully": "Event Updated Successfully",
+  "no_favorite_events": "No Favorite Events"
 }

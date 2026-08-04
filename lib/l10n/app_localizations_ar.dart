@@ -245,4 +245,16 @@ class AppLocalizationsAr extends AppLocalizations {
   @override
   String get the_account_already_exists_for_that_email =>
       'يوجد حساب بالفعل مرتبط بهذا البريد الإلكتروني';
+
+  @override
+  String get event_added_successfully => 'تمت إضافة الفعالية بنجاح';
+
+  @override
+  String get no_event_found_yet => 'لا توجد فعاليات حتى الآن';
+
+  @override
+  String get event_udate_successfully => 'تم تحديث الفعالية بنجاح';
+
+  @override
+  String get no_favorite_events => 'لا توجد فعاليات مفضلة';
 }

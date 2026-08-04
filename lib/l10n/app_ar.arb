@@ -74,6 +74,10 @@
   "email_or_password_is_incorrect": "البريد الإلكتروني أو كلمة المرور غير صحيحة",
   "error": "خطأ",
   "register_successfully": "تم إنشاء الحساب بنجاح",
-  "the_account_already_exists_for_that_email": "يوجد حساب بالفعل مرتبط بهذا البريد الإلكتروني"
+  "the_account_already_exists_for_that_email": "يوجد حساب بالفعل مرتبط بهذا البريد الإلكتروني",
+  "event_added_successfully": "تمت إضافة الفعالية بنجاح",
+  "no_event_found_yet": "لا توجد فعاليات حتى الآن",
+  "event_udate_successfully": "تم تحديث الفعالية بنجاح",
+  "no_favorite_events": "لا توجد فعاليات مفضلة"
 
 }

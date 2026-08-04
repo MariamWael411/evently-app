@@ -1,15 +1,21 @@
 import 'package:date_picker_plus/date_picker_plus.dart';
+import 'package:evently/firebase_utils.dart';
 import 'package:evently/l10n/app_localizations.dart';
+import 'package:evently/model/event.dart';
+import 'package:evently/model/model_app.dart';
+import 'package:evently/providers/user_provider.dart';
 import 'package:evently/ui/add_event/choose_date_and_time_widget.dart';
 import 'package:evently/ui/add_event/list_view_add_event_widget.dart';
 import 'package:evently/ui/widgets/custom_elevated_button.dart';
 import 'package:evently/ui/widgets/custom_text_form_feild.dart';
 import 'package:evently/utils/config.dart';
+import 'package:evently/utils/toast_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:icon_plus/icon_plus.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
+import '../../providers/event_provider.dart';
 import '../../providers/language_provider.dart';
 import '../../providers/theme_provider.dart';
 
@@ -22,7 +28,6 @@ class AddEventScreen extends StatefulWidget {
 
 class _AddEventScreenState extends State<AddEventScreen> {
   List<String> titles = [];
-  int currentIndex = 0;
   var title = '';
   var description = '';
   late LanguageProvider languageProvider;
@@ -31,11 +36,20 @@ class _AddEventScreenState extends State<AddEventScreen> {
   DateTime? dateTime;
   TimeOfDay? timeOfDay;
   var formKey = GlobalKey<FormState>();
+  var selectedImage = '';
+  late UserProvider userProvider;
+  var eventName = '';
+  late EventProvider eventProvider;
 
   @override
   Widget build(BuildContext context) {
+    eventProvider = Provider.of<EventProvider>(context);
     var themeProvider = Provider.of<ThemeProvider>(context);
     languageProvider = Provider.of<LanguageProvider>(context);
+    selectedImage = themeProvider.isDark()
+        ? ModelApp.imagesDark[eventProvider.currentIndex]
+        : ModelApp.imagesLight[eventProvider.currentIndex];
+    userProvider = Provider.of<UserProvider>(context);
 
     titles = [
       AppLocalizations.of(context)!.sport,
@@ -44,6 +58,7 @@ class _AddEventScreenState extends State<AddEventScreen> {
       AppLocalizations.of(context)!.book_club,
       AppLocalizations.of(context)!.exhibition,
     ];
+    eventName = titles[eventProvider.currentIndex];
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
@@ -62,7 +77,7 @@ class _AddEventScreenState extends State<AddEventScreen> {
             borderRadius: BorderRadius.circular(8),
             border: Border.all(
               color: Theme.of(context).colorScheme.onPrimaryContainer,
-              width: 2,
+              width: 1,
             ),
           ),
           child: IconButton(
@@ -155,6 +170,28 @@ class _AddEventScreenState extends State<AddEventScreen> {
   void addEvent() {
     if (formKey.currentState?.validate() == true) {
       //todo add event
+      Event event = Event(
+        name: eventName,
+        title: title,
+        description: description,
+        image: selectedImage,
+        date: DateTime(
+            dateTime!.year, dateTime!.month, dateTime!.day, timeOfDay!.hour,
+            timeOfDay!.minute),
+        index: eventProvider.currentIndex + 1,
+        userId: userProvider.myUser!.id,
+      );
+      FirebaseUtils.addEventInFireStore(event)
+          .then((value) {
+        Navigator.pop(context);
+        ToastUtils.showToastMessage(
+            message: AppLocalizations.of(context)!.event_added_successfully,
+            context: context);
+      }).catchError((error) {
+        ToastUtils.showToastMessage(
+            message: error.toString(), context: context);
+      })
+      ;
     }
   }
 

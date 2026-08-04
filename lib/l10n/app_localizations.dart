@@ -553,6 +553,30 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'The account already exists for that email'**
   String get the_account_already_exists_for_that_email;
+
+  /// No description provided for @event_added_successfully.
+  ///
+  /// In en, this message translates to:
+  /// **'Event Added Successfully'**
+  String get event_added_successfully;
+
+  /// No description provided for @no_event_found_yet.
+  ///
+  /// In en, this message translates to:
+  /// **'No event Found yet'**
+  String get no_event_found_yet;
+
+  /// No description provided for @event_udate_successfully.
+  ///
+  /// In en, this message translates to:
+  /// **'Event Updated Successfully'**
+  String get event_udate_successfully;
+
+  /// No description provided for @no_favorite_events.
+  ///
+  /// In en, this message translates to:
+  /// **'No Favorite Events'**
+  String get no_favorite_events;
 }
 
 class _AppLocalizationsDelegate

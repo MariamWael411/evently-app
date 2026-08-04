@@ -84,7 +84,7 @@ class RegisterLogic {
     final GoogleSignIn googleSignIn = GoogleSignIn();
 
     // Trigger the authentication flow
-    await googleSignIn.disconnect();
+    await googleSignIn.signOut();
     final GoogleSignInAccount? googleUser = await googleSignIn.signIn();
 
     // Obtain the auth details from the request
