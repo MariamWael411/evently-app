@@ -27,4 +27,6 @@ class AppImage {
   static const String profileImage = '${_path}profileImage.png';
   static const String sportDark = '${_path}SportDark.png';
   static const String sportLight = '${_path}SportLight.png';
+  static const String edit = '${_path}edit.png';
+  static const String trash = '${_path}trash.png';
 }

@@ -5,4 +5,5 @@ class AppRoute {
   static const String registerScreen = 'register_screen';
   static const String primaryScreen = 'primary_screen';
   static const String addEventScreen = 'add_event_screen';
+  static const String detailsEventScreen = 'details_event_screen';
 }

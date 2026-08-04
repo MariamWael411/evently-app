@@ -18,6 +18,7 @@ import 'package:provider/provider.dart';
 import '../../providers/event_provider.dart';
 import '../../providers/language_provider.dart';
 import '../../providers/theme_provider.dart';
+import '../widgets/custom_leading_widget.dart';
 
 class AddEventScreen extends StatefulWidget {
   const AddEventScreen({super.key});
@@ -67,28 +68,17 @@ class _AddEventScreenState extends State<AddEventScreen> {
           style: Theme.of(context).textTheme.labelSmall,
         ),
         centerTitle: true,
-        leading: Container(
-          margin: EdgeInsets.only(
-            left: Config.width(context) * 0.02,
-            top: Config.height(context) * 0.01,
+        leading: CustomLeadingWidget(
+          icon: Icon(
+            Icons.arrow_back_ios_new,
+            color: Theme
+                .of(context)
+                .colorScheme
+                .primary,
           ),
-          decoration: BoxDecoration(
-            color: Theme.of(context).colorScheme.onPrimary,
-            borderRadius: BorderRadius.circular(8),
-            border: Border.all(
-              color: Theme.of(context).colorScheme.onPrimaryContainer,
-              width: 1,
-            ),
-          ),
-          child: IconButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            icon: Icon(
-              Icons.arrow_back_ios_new,
-              color: Theme.of(context).colorScheme.primary,
-            ),
-          ),
+          onTap: () {
+            Navigator.pop(context);
+          },
         ),
       ),
       body: Padding(
