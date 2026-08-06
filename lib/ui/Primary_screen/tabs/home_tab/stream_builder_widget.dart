@@ -4,17 +4,20 @@ import 'package:flutter/material.dart';
 import '../../../../model/event.dart';
 import 'list_view_container.dart';
 
+typedef OnData=void Function(List<Event>);
 class StreamBuilderWidget extends StatelessWidget {
   StreamBuilderWidget({
     super.key,
     required this.eventList,
     required this.stream,
     required this.text,
+    required this.onData
   });
 
   String text;
   List<Event> eventList;
   Stream<List<Event>>? stream;
+  final OnData onData;
 
   @override
   Widget build(BuildContext context) {
@@ -33,6 +36,7 @@ class StreamBuilderWidget extends StatelessWidget {
           return CustomTextWidget(text: text);
         } else {
           eventList = snapshot.data!;
+          onData(eventList);
 
           return eventList.isEmpty
               ? CustomTextWidget(text: text)

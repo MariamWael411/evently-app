@@ -81,6 +81,7 @@
   "no_favorite_events": "لا توجد فعاليات مفضلة",
   "event_deleted_successfully": "تم حذف الحدث بنجاح",
   "check_your_email_to_reset_password": "تحقق من بريدك الإلكتروني لإعادة تعيين كلمة المرور",
-  "email_is_incorrect": "البريد الإلكتروني غير صحيح"
+  "email_is_incorrect": "البريد الإلكتروني غير صحيح",
+  "no_event_found": "لم يتم العثور على أي حدث"
 
 }

@@ -81,5 +81,6 @@
   "no_favorite_events": "No Favorite Events",
   "event_deleted_successfully": "Event Deleted Successfully",
   "check_your_email_to_reset_password": "Check your email to reset password",
-  "email_is_incorrect": "Email is incorrect"
+  "email_is_incorrect": "Email is incorrect",
+  "no_event_found": "No Event Found"
 }

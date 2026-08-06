@@ -118,6 +118,9 @@ class _HomeScreenState extends State<HomeScreen> {
 
               Expanded(
                 child: StreamBuilderWidget(
+                  onData: (list) {
+                    eventList = list;
+                  },
                   eventList: eventList,
                   stream: stream,
                   text: AppLocalizations.of(context)!.no_event_found_yet,

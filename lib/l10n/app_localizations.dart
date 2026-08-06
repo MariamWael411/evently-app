@@ -595,6 +595,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Email is incorrect'**
   String get email_is_incorrect;
+
+  /// No description provided for @no_event_found.
+  ///
+  /// In en, this message translates to:
+  /// **'No Event Found'**
+  String get no_event_found;
 }
 
 class _AppLocalizationsDelegate
