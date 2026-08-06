@@ -6,4 +6,6 @@ class AppRoute {
   static const String primaryScreen = 'primary_screen';
   static const String addEventScreen = 'add_event_screen';
   static const String detailsEventScreen = 'details_event_screen';
+  static const String updateEventScreen = 'update_event_screen';
+  static const String forgetPasswordScreen = 'forget_password_screen';
 }

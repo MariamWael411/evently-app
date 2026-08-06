@@ -255,4 +255,14 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get no_favorite_events => 'No Favorite Events';
+
+  @override
+  String get event_deleted_successfully => 'Event Deleted Successfully';
+
+  @override
+  String get check_your_email_to_reset_password =>
+      'Check your email to reset password';
+
+  @override
+  String get email_is_incorrect => 'Email is incorrect';
 }

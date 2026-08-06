@@ -22,7 +22,6 @@ class _ListViewAddEventWidgetState extends State<ListViewAddEventWidget> {
   Widget build(BuildContext context) {
     var themeProvider = Provider.of<ThemeProvider>(context);
     var eventProvider = Provider.of<EventProvider>(context);
-
     titles = [
       AppLocalizations.of(context)!.sport,
       AppLocalizations.of(context)!.birthday,
@@ -30,7 +29,6 @@ class _ListViewAddEventWidgetState extends State<ListViewAddEventWidget> {
       AppLocalizations.of(context)!.book_club,
       AppLocalizations.of(context)!.exhibition,
     ];
-
     return Column(
       spacing: Config.height(context) * 0.02,
       children: [

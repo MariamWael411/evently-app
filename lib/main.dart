@@ -1,3 +1,4 @@
+import 'package:evently/providers/event_home_provider.dart';
 import 'package:evently/providers/event_provider.dart';
 import 'package:evently/providers/language_provider.dart';
 import 'package:evently/providers/theme_provider.dart';
@@ -7,8 +8,10 @@ import 'package:evently/ui/Primary_screen/primary_screen.dart';
 import 'package:evently/ui/Register/register_screen.dart';
 import 'package:evently/ui/add_event/add_event_screen.dart';
 import 'package:evently/ui/events_details/event_details_screen.dart';
+import 'package:evently/ui/forget_password/forget_password.dart';
 import 'package:evently/ui/home.dart';
 import 'package:evently/ui/introduction_screen/introduction_screen2.dart';
+import 'package:evently/ui/update_event/update_event.dart';
 import 'package:evently/utils/app_route.dart';
 import 'package:evently/utils/app_theme.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -26,6 +29,7 @@ void main() async {
   runApp(
     MultiProvider(
       providers: [
+        ChangeNotifierProvider(create: (context) => EventHomeProvider(),),
         ChangeNotifierProvider(create: (context) => UserProvider(),),
         ChangeNotifierProvider(create: (context) => LanguageProvider()),
         ChangeNotifierProvider(create: (context) => ThemeProvider()),
@@ -57,7 +61,9 @@ class MyApp extends StatelessWidget {
         AppRoute.registerScreen: (context) => RegisterScreen(),
         AppRoute.primaryScreen: (context) => PrimaryScreen(),
         AppRoute.addEventScreen: (context) => AddEventScreen(),
-        AppRoute.detailsEventScreen: (context) => EventDetailsScreen()
+        AppRoute.detailsEventScreen: (context) => EventDetailsScreen(),
+        AppRoute.updateEventScreen: (context) => UpdateEvent(),
+        AppRoute.forgetPasswordScreen: (context) => ForgetPassword()
       },
     );
   }

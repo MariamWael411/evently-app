@@ -1,5 +1,5 @@
 import 'package:evently/l10n/app_localizations.dart';
-import 'package:evently/providers/event_provider.dart';
+import 'package:evently/providers/event_home_provider.dart';
 import 'package:evently/ui/Primary_screen/tabs/home_tab/tab_item_widget.dart';
 import 'package:evently/utils/config.dart';
 import 'package:flutter/material.dart';
@@ -20,13 +20,11 @@ class CustomListView extends StatefulWidget {
 
 class _CustomListViewState extends State<CustomListView> {
   List<String> titles = [];
-
-  int currentIndex = 0;
-  late EventProvider eventProvider;
+  late EventHomeProvider eventProvider;
 
   @override
   Widget build(BuildContext context) {
-    eventProvider = Provider.of<EventProvider>(context);
+    eventProvider = Provider.of<EventHomeProvider>(context);
     titles = [
       AppLocalizations.of(context)!.all,
       AppLocalizations.of(context)!.sport,
@@ -35,7 +33,6 @@ class _CustomListViewState extends State<CustomListView> {
       AppLocalizations.of(context)!.book_club,
       AppLocalizations.of(context)!.exhibition,
     ];
-
     return ListView.separated(
       scrollDirection: Axis.horizontal,
       itemBuilder: (context, index) => InkWell(
@@ -44,8 +41,8 @@ class _CustomListViewState extends State<CustomListView> {
           setState(() {});
         },
         child: TabItemWidget(
-          isSelected: eventProvider.currentIndex == index,
-          icon: eventProvider.currentIndex == index
+          isSelected: eventProvider.homeIndex == index,
+          icon: eventProvider.homeIndex == index
               ? ModelApp.selectedIcons[index]
               : ModelApp.unSelectedIcons[index],
           text: titles[index],

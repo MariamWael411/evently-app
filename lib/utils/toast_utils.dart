@@ -7,12 +7,16 @@ class ToastUtils {
   static void showToastMessage({
     required String message,
     required BuildContext context,
+    Color? color
   }) {
     showToastWidget(
       Container(
         padding: EdgeInsets.all(Config.width(context) * 0.02),
         decoration: BoxDecoration(
-          color: Theme.of(context).colorScheme.primary,
+          color: color ?? Theme
+              .of(context)
+              .colorScheme
+              .primary,
           borderRadius: BorderRadius.circular(8),
         ),
 

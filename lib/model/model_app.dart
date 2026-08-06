@@ -13,11 +13,11 @@ class ModelApp {
     Bootstrap.image,
   ];
   static List<IconData> selectedIcons = [
-    Bootstrap.grid_3x3_gap_fill,
-    Bootstrap.bicycle,
+    Iconsax.category_bold,
+    FontAwesome.bicycle_solid,
     Bootstrap.cake_fill,
     Bootstrap.calendar_fill,
-    Bootstrap.book_fill,
+    FontAwesome.book_open_solid,
     Bootstrap.image_fill,
   ];
   static List<String> imagesLight = [

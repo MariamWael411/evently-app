@@ -52,16 +52,21 @@ class ListViewWidget extends StatelessWidget {
         children: [
           Image.asset(images[index]),
           Center(
-            child: SmoothPageIndicator(
-              controller: controller,
-              count: 3,
+            child: AnimatedContainer(
+              duration: Duration(milliseconds: 300),
 
-              effect: ExpandingDotsEffect(
-                expansionFactor: 3,
-                dotWidth: Config.width(context) * 0.024,
-                dotHeight: Config.height(context) * 0.013,
-                dotColor: Theme.of(context).colorScheme.onPrimaryFixed,
-                activeDotColor: Theme.of(context).colorScheme.primary,
+              child: SmoothPageIndicator(
+                controller: controller,
+                count: 3,
+
+                effect: ExpandingDotsEffect(
+                  expansionFactor: 3,
+                  offset: 4,
+                  dotWidth: Config.width(context) * 0.024,
+                  dotHeight: Config.height(context) * 0.01,
+                  dotColor: Theme.of(context).colorScheme.onPrimaryFixed,
+                  activeDotColor: Theme.of(context).colorScheme.primary,
+                ),
               ),
             ),
           ),

@@ -10,7 +10,7 @@ import 'container_item_widget.dart';
 class ListViewContainer extends StatelessWidget {
   ListViewContainer({super.key, required this.eventList});
 
-  List<Event> eventList;
+  List<Event>? eventList;
 
   late UserProvider userProvider;
 
@@ -22,12 +22,12 @@ class ListViewContainer extends StatelessWidget {
           InkWell(
               onTap: () {
                 Navigator.pushNamed(context, AppRoute.detailsEventScreen,
-                    arguments: eventList[index]);
+                    arguments: eventList![index]);
               },
-              child: ContainerItemWidget(eventList: eventList, index: index,)),
+              child: ContainerItemWidget(eventList: eventList!, index: index,)),
       separatorBuilder: (context, index) =>
           SizedBox(height: Config.height(context) * 0.02),
-      itemCount: eventList.length,
+      itemCount: eventList!.length,
     );
   }
 

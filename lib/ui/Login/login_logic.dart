@@ -28,7 +28,7 @@ class LoginLogic {
               email: emailController.text,
               password: passwordController.text,
             );
-        //todo: save in firestore
+        //todo: get in firestore
         var myUser = await FirebaseUtils.getUserFromFireStore(
           credential.user?.uid ?? '',
         );

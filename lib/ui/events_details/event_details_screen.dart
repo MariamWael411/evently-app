@@ -1,8 +1,12 @@
+import 'package:evently/firebase_utils.dart';
 import 'package:evently/l10n/app_localizations.dart';
 import 'package:evently/providers/theme_provider.dart';
+import 'package:evently/providers/user_provider.dart';
 import 'package:evently/ui/events_details/time_container_widget.dart';
 import 'package:evently/ui/widgets/custom_leading_widget.dart';
 import 'package:evently/utils/app_color.dart';
+import 'package:evently/utils/app_route.dart';
+import 'package:evently/utils/toast_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:icon_plus/icon_plus.dart';
 import 'package:provider/provider.dart';
@@ -17,11 +21,15 @@ class EventDetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var userProvider = Provider.of<UserProvider>(context);
     themeProvider = Provider.of<ThemeProvider>(context);
-    Event args = ModalRoute.of(context)?.settings.arguments as Event;
+    Event? args = ModalRoute
+        .of(context)
+        ?.settings
+        .arguments as Event?;
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
+        backgroundColor: AppColor.transparent,
         leading: CustomLeadingWidget(
           icon: Icon(
             Icons.arrow_back_ios_new,
@@ -45,11 +53,28 @@ class EventDetailsScreen extends StatelessWidget {
               EvaIcons.edit_2_outline,
               color: Theme.of(context).colorScheme.primary,
             ),
-            onTap: () {},
+            onTap: () {
+              Navigator.of(context).pushNamed(
+                  AppRoute.updateEventScreen, arguments: args);
+            },
           ),
           CustomLeadingWidget(
             icon: Icon(Bootstrap.trash, color: AppColor.red),
-            onTap: () {},
+            onTap: () {
+              FirebaseUtils.deleteEvent(
+                  id: args!.id, userId: userProvider.myUser!.id).then((value) {
+                Navigator.pop(context);
+                ToastUtils.showToastMessage(
+                    message: AppLocalizations.of(context)!
+                        .event_deleted_successfully,
+                    context: context,
+                    color: AppColor.red);
+              }).catchError((error) {
+                ToastUtils.showToastMessage(
+                    message: error.toString(), context: context);
+              })
+              ;
+            },
           ),
         ],
       ),
@@ -72,7 +97,7 @@ class EventDetailsScreen extends StatelessWidget {
                   width: 1,
                 ),
                 image: DecorationImage(
-                  image: AssetImage(args.image),
+                  image: AssetImage(args!.image),
                   fit: BoxFit.fill,
                 ),
               ),

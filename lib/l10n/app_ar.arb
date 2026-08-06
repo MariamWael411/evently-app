@@ -78,6 +78,9 @@
   "event_added_successfully": "تمت إضافة الفعالية بنجاح",
   "no_event_found_yet": "لا توجد فعاليات حتى الآن",
   "event_udate_successfully": "تم تحديث الفعالية بنجاح",
-  "no_favorite_events": "لا توجد فعاليات مفضلة"
+  "no_favorite_events": "لا توجد فعاليات مفضلة",
+  "event_deleted_successfully": "تم حذف الحدث بنجاح",
+  "check_your_email_to_reset_password": "تحقق من بريدك الإلكتروني لإعادة تعيين كلمة المرور",
+  "email_is_incorrect": "البريد الإلكتروني غير صحيح"
 
 }

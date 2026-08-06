@@ -8,7 +8,7 @@ class AppImage {
   static const String exhibitionLight = '${_path}ExhibitionLight.png';
   static const String eyeSlash = '${_path}eye-slash.png';
   static const String forgetPasswordDark = '${_path}ForgetPasswordDark.png';
-  static const String forgetPasswordLight = '${_path}ForgetPasswordLight.png';
+  static const String forgetPasswordLight = '${_path}forgetPasswordLight.png';
   static const String iconBlack = '${_path}iconBlack.png';
   static const String iconLight = '${_path}iconLight.png';
   static const String intro1Dark = '${_path}intro1Dark.png';

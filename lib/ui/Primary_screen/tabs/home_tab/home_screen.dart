@@ -1,7 +1,7 @@
 import 'package:evently/firebase_utils.dart';
 import 'package:evently/l10n/app_localizations.dart';
 import 'package:evently/model/event.dart';
-import 'package:evently/providers/event_provider.dart';
+import 'package:evently/providers/event_home_provider.dart';
 import 'package:evently/providers/user_provider.dart';
 import 'package:evently/ui/Primary_screen/tabs/home_tab/custom_list_view.dart';
 import 'package:evently/ui/Primary_screen/tabs/home_tab/stream_builder_widget.dart';
@@ -25,20 +25,21 @@ class _HomeScreenState extends State<HomeScreen> {
   List<Event> eventList = [];
   Stream<List<Event>>? stream;
   late var userProvider;
-  late EventProvider eventProvider;
+
+  late EventHomeProvider eventIndexProvider;
 
   @override
   void initState() {
     // TODO: implement initState
     WidgetsBinding.instance.addPostFrameCallback((_) {
       stream = FirebaseUtils.getAllEvent(userProvider: userProvider);
-      eventProvider.changeIndex(0);
+      eventIndexProvider.updateIndex(0);
     });
   }
 
   void updateEvent(int index) {
-    eventProvider.changeIndex(index);
-    if (eventProvider.currentIndex == 0) {
+    eventIndexProvider.updateIndex(index);
+    if (eventIndexProvider.homeIndex == 0) {
       stream = FirebaseUtils.getAllEvent(userProvider: userProvider);
     } else {
       stream = FirebaseUtils.getFilterEvent(
@@ -51,9 +52,10 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    eventProvider = Provider.of<EventProvider>(context);
+    eventIndexProvider = Provider.of<EventHomeProvider>(context);
 
     var themeProvider = Provider.of<ThemeProvider>(context);
+
     userProvider = Provider.of<UserProvider>(context);
     var languageProvider = Provider.of<LanguageProvider>(context);
 

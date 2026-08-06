@@ -27,9 +27,12 @@ class FirebaseUtils {
     return FirebaseFirestore.instance
         .collection(MyUser.collectionName)
         .doc(userId)
-        .collection(Event.collectionName).withConverter(
-      fromFirestore: (snapshot, options) => Event.fromJson(snapshot.data()!),
-      toFirestore: (event, options) => event.toJson(),);
+        .collection(Event.collectionName)
+        .withConverter(
+      fromFirestore: (snapshot, options) =>
+          Event.fromJson(snapshot.data()!),
+      toFirestore: (event, options) => event.toJson(),
+    );
   }
 
   static Future<void> addEventInFireStore(Event event) {
@@ -39,9 +42,9 @@ class FirebaseUtils {
   }
 
   static Stream<List<Event>> getAllEvent({required UserProvider userProvider}) {
-    var stream = FirebaseUtils.getEventCollection(userProvider.myUser?.id ?? '')
-        .orderBy('date')
-        .snapshots();
+    var stream = FirebaseUtils.getEventCollection(
+      userProvider.myUser?.id ?? '',
+    ).orderBy('date').snapshots();
     return stream.map((query) {
       return query.docs.map((element) {
         return element.data();
@@ -49,12 +52,13 @@ class FirebaseUtils {
     });
   }
 
-  static Stream<List<Event>> getFilterEvent(
-      {required int selectedIndex, required UserProvider userProvider}) {
-    var stream = FirebaseUtils.getEventCollection(userProvider.myUser?.id ?? '')
-        .where('index', isEqualTo: selectedIndex)
-        .orderBy('date')
-        .snapshots();
+  static Stream<List<Event>> getFilterEvent({
+    required int selectedIndex,
+    required UserProvider userProvider,
+  }) {
+    var stream = FirebaseUtils.getEventCollection(
+      userProvider.myUser?.id ?? '',
+    ).where('index', isEqualTo: selectedIndex).orderBy('date').snapshots();
     return stream.map((query) {
       return query.docs.map((doc) {
         return doc.data();
@@ -62,22 +66,42 @@ class FirebaseUtils {
     });
   }
 
-  static Future<void> updateEvent(
-      { required Event event, required String userId}) {
-    return getEventCollection(userId).doc(event.id).update(
-        {'is_favorite': !event.isFavorite});
+  static Future<void> updateEvent({
+    required Event event,
+    required String userId,
+  }) {
+    return getEventCollection(
+      userId,
+    ).doc(event.id).update({'is_favorite': !event.isFavorite});
   }
 
-  static Stream<List<Event>> getFavoriteEvents(
-      {required UserProvider userProvider}) {
-    var stream = FirebaseUtils.getEventCollection(userProvider.myUser?.id ?? '')
-        .where('is_favorite', isEqualTo: true)
-        .orderBy('date')
-        .snapshots();
+  static Stream<List<Event>> getFavoriteEvents({
+    required UserProvider userProvider,
+  }) {
+    var stream = FirebaseUtils.getEventCollection(
+      userProvider.myUser?.id ?? '',
+    ).where('is_favorite', isEqualTo: true).orderBy('date').snapshots();
     return stream.map((query) {
       return query.docs.map((element) {
         return element.data();
       }).toList();
     });
+  }
+
+  static Future<void> updateAllEvent(
+      {required String userId, required Event event,}) {
+    return getEventCollection(userId).doc(event.id).update({
+      'date': event.date,
+      'index': event.index,
+      'image': event.image,
+      'description': event.description,
+      'title': event.title,
+      'name': event.name
+    });
+  }
+
+  static Future<void> deleteEvent(
+      { required String id, required String userId}) {
+    return getEventCollection(userId).doc(id).delete();
   }
 }

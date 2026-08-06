@@ -257,4 +257,14 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get no_favorite_events => 'لا توجد فعاليات مفضلة';
+
+  @override
+  String get event_deleted_successfully => 'تم حذف الحدث بنجاح';
+
+  @override
+  String get check_your_email_to_reset_password =>
+      'تحقق من بريدك الإلكتروني لإعادة تعيين كلمة المرور';
+
+  @override
+  String get email_is_incorrect => 'البريد الإلكتروني غير صحيح';
 }

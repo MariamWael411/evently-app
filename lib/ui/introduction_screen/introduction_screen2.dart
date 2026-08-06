@@ -7,6 +7,7 @@ import '../../l10n/app_localizations.dart';
 import '../../providers/theme_provider.dart';
 import '../../utils/app_image.dart';
 import '../../utils/config.dart';
+import '../widgets/custom_leading_widget.dart';
 
 class IntroductionScreen2 extends StatefulWidget {
   IntroductionScreen2({super.key});
@@ -27,28 +28,20 @@ class _IntroductionScreen2State extends State<IntroductionScreen2> {
       appBar: AppBar(
         leading: (currentIndex == 0)
             ? null
-            : IconButton(
-                onPressed: () {
-                  pageController.previousPage(
-                    duration: Duration(milliseconds: 300),
-                    curve: Curves.easeInOut,
-                  );
-                },
-                style: IconButton.styleFrom(
-                  backgroundColor: Theme.of(context).colorScheme.onPrimary,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8),
-                    side: BorderSide(
-                      color: Theme.of(context).colorScheme.onPrimaryContainer,
-                      width: 2,
-                    ),
-                  ),
-                ),
-                icon: Icon(
-                  Icons.arrow_back_ios,
-                  color: Theme.of(context).colorScheme.inversePrimary,
-                ),
-              ),
+            : CustomLeadingWidget(
+          icon: Icon(
+            Icons.arrow_back_ios_new,
+            color: Theme
+                .of(context)
+                .colorScheme
+                .primary,
+          ),
+          onTap: () {
+            pageController.previousPage(
+                duration: Duration(milliseconds: 500),
+                curve: Curves.easeInOut);
+          },
+        ),
         backgroundColor: Colors.transparent,
         title: Image.asset(
           themeProvider.isDark() ? AppImage.iconBlack : AppImage.iconLight,
@@ -92,7 +85,7 @@ class _IntroductionScreen2State extends State<IntroductionScreen2> {
           index: index,
           next: () {
             pageController.nextPage(
-              duration: Duration(milliseconds: 300),
+              duration: Duration(milliseconds: 500),
               curve: Curves.easeInOut,
             );
           },

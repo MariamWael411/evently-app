@@ -78,5 +78,8 @@
   "event_added_successfully": "Event Added Successfully",
   "no_event_found_yet": "No event Found yet",
   "event_udate_successfully": "Event Updated Successfully",
-  "no_favorite_events": "No Favorite Events"
+  "no_favorite_events": "No Favorite Events",
+  "event_deleted_successfully": "Event Deleted Successfully",
+  "check_your_email_to_reset_password": "Check your email to reset password",
+  "email_is_incorrect": "Email is incorrect"
 }

@@ -577,6 +577,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'No Favorite Events'**
   String get no_favorite_events;
+
+  /// No description provided for @event_deleted_successfully.
+  ///
+  /// In en, this message translates to:
+  /// **'Event Deleted Successfully'**
+  String get event_deleted_successfully;
+
+  /// No description provided for @check_your_email_to_reset_password.
+  ///
+  /// In en, this message translates to:
+  /// **'Check your email to reset password'**
+  String get check_your_email_to_reset_password;
+
+  /// No description provided for @email_is_incorrect.
+  ///
+  /// In en, this message translates to:
+  /// **'Email is incorrect'**
+  String get email_is_incorrect;
 }
 
 class _AppLocalizationsDelegate
