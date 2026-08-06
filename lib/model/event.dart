@@ -11,6 +11,7 @@ class Event {
   DateTime date;
   bool isFavorite;
   String userId;
+  String imageDark;
 
   Event({
     required this.name,
@@ -22,6 +23,8 @@ class Event {
     this.id = '',
     required this.userId,
     this.isFavorite = false,
+    required this.imageDark
+
   });
 
   Event.fromJson(Map<String, dynamic> data)
@@ -35,6 +38,7 @@ class Event {
         id: data['id'],
         userId: data['user_id'],
         isFavorite: data['is_favorite'],
+      imageDark: data['image_dark']
       );
 
   Map<String, dynamic> toJson() {
@@ -48,6 +52,7 @@ class Event {
       'date': date,
       'user_id': userId,
       'is_favorite': isFavorite,
+      'image_dark': imageDark
     };
   }
 }

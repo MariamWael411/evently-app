@@ -36,7 +36,9 @@ class ContainerItemWidget extends StatelessWidget {
       clipBehavior: Clip.antiAlias,
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage(eventList[index].image),
+          image: AssetImage(themeProvider.isDark()
+              ? eventList[index].imageDark
+              : eventList[index].image),
           fit: BoxFit.fill,
         ),
         borderRadius: BorderRadius.circular(16),

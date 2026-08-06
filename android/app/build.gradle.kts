@@ -9,7 +9,7 @@ plugins {
 
 android {
     namespace = "com.example.evently"
-    compileSdk = flutter.compileSdkVersion
+    compileSdk = 37
     ndkVersion = flutter.ndkVersion
 
     compileOptions {

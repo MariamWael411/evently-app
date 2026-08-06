@@ -88,7 +88,7 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
                           context,
                         )!.no_favorite_events,
                       )
-                          : filterEvent.isEmpty ?
+                          : (filterEvent.isEmpty && searchText.isNotEmpty) ?
                       CustomTextWidget(text: AppLocalizations.of(context)!
                           .no_event_found)
                           :

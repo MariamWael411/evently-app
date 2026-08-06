@@ -23,18 +23,17 @@ class _ProfileScreenState extends State<ProfileScreen> {
     var themeProvider = Provider.of<ThemeProvider>(context);
     var userProvider = Provider.of<UserProvider>(context);
 
-
     return Scaffold(
       body: SafeArea(
         child: Column(
           spacing: Config.width(context) * 0.05,
           children: [
             SizedBox(height: Config.height(context) * 0.03),
-            Image.asset(AppImage.profileImage),
-            Text(userProvider.myUser!.name, style: Theme
-                .of(context)
-                .textTheme
-                .bodyLarge),
+            ClipOval(child: Image.asset(AppImage.profileImage)),
+            Text(
+              userProvider.myUser!.name,
+              style: Theme.of(context).textTheme.bodyLarge,
+            ),
             Text(
               userProvider.myUser!.email,
               style: Theme.of(context).textTheme.headlineMedium,
@@ -53,7 +52,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   if (states.contains(WidgetState.selected)) {
                     return Colors.transparent;
                   }
-                  return AppColor.white; // Use the default color.
+                  return AppColor.white;
                 }),
 
                 onChanged: (value) {
@@ -87,7 +86,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
               IconButton(
                 onPressed: () {
                   Navigator.of(context).pushNamedAndRemoveUntil(
-                    AppRoute.loginScreen, (route) => false,);
+                    AppRoute.loginScreen,
+                    (route) => false,
+                  );
                 },
                 icon: Icon(Icons.logout_sharp, color: AppColor.red),
               ),

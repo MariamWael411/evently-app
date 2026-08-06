@@ -216,10 +216,11 @@ class _AddEventScreenState extends State<CustomAddUpdateEvent> {
     if (formKey.currentState?.validate() == true) {
       //todo add event
       Event event = Event(
+        imageDark: ModelApp.imagesDark[eventProvider.currentIndex],
         name: eventName,
         title: title,
         description: description,
-        image: selectedImage,
+        image: ModelApp.imagesLight[eventProvider.currentIndex],
         date: DateTime(
           dateTime!.year,
           dateTime!.month,

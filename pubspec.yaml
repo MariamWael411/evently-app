@@ -50,6 +50,11 @@ dependencies:
   cloud_firestore: ^6.7.1
   google_sign_in: ^6.3.0
   flutter_styled_toast: ^2.3.0
+  image_picker: ^1.2.3
+  device_info_plus: ^13.2.0
+  permission_handler: ^13.0.0
+
+
 
 
 

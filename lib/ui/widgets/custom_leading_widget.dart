@@ -20,7 +20,7 @@ class CustomLeadingWidget extends StatelessWidget {
         borderRadius: BorderRadius.circular(8),
         border: Border.all(
           color: Theme.of(context).colorScheme.onPrimaryContainer,
-          width: 1,
+          width: 2,
         ),
       ),
       child: IconButton(onPressed: onTap, icon: icon),

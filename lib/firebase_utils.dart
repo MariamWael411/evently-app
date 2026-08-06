@@ -104,4 +104,6 @@ class FirebaseUtils {
       { required String id, required String userId}) {
     return getEventCollection(userId).doc(id).delete();
   }
+
+
 }

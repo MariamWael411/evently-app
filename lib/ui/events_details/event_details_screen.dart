@@ -97,7 +97,8 @@ class EventDetailsScreen extends StatelessWidget {
                   width: 1,
                 ),
                 image: DecorationImage(
-                  image: AssetImage(args!.image),
+                  image: AssetImage(
+                      themeProvider.isDark() ? args!.imageDark : args!.image),
                   fit: BoxFit.fill,
                 ),
               ),

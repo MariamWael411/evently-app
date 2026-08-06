@@ -72,28 +72,32 @@ class _IntroductionScreen2State extends State<IntroductionScreen2> {
           ),
         ],
       ),
-      body: PageView.builder(
-        onPageChanged: (value) {
-          currentIndex = value;
-          setState(() {});
-        },
-        physics: NeverScrollableScrollPhysics(),
-        controller: pageController,
-        scrollDirection: Axis.horizontal,
-        itemBuilder: (context, index) => ListViewWidget(
+      body: Expanded(
+        child: PageView.builder(
+          onPageChanged: (value) {
+            currentIndex = value;
+            setState(() {});
+          },
+          physics: NeverScrollableScrollPhysics(),
           controller: pageController,
-          index: index,
-          next: () {
-            pageController.nextPage(
-              duration: Duration(milliseconds: 500),
-              curve: Curves.easeInOut,
-            );
-          },
-          finish: () {
-            Navigator.of(context).pushReplacementNamed(AppRoute.loginScreen);
-          },
+          scrollDirection: Axis.horizontal,
+          itemBuilder: (context, index) =>
+              ListViewWidget(
+                controller: pageController,
+                index: index,
+                next: () {
+                  pageController.nextPage(
+                    duration: Duration(milliseconds: 500),
+                    curve: Curves.easeInOut,
+                  );
+                },
+                finish: () {
+                  Navigator.of(context).pushReplacementNamed(
+                      AppRoute.loginScreen);
+                },
+              ),
+          itemCount: 3,
         ),
-        itemCount: 3,
       ),
     );
   }

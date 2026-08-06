@@ -21,7 +21,6 @@ class _UpdateEventState extends State<UpdateEvent> {
     var userProvider = Provider.of<UserProvider>(context);
 
     var args = ModalRoute.of(context)?.settings.arguments as Event;
-    print("sdfghl';lkjhjjhgffghjffghjfg${args.index}");
     return CustomAddUpdateEvent(
       index: args.index,
       elevatedButtonText: AppLocalizations.of(context)!.update_event,
