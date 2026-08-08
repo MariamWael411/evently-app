@@ -1,4 +1,3 @@
-import 'package:evently/l10n/app_localizations.dart';
 import 'package:evently/providers/event_home_provider.dart';
 import 'package:evently/ui/Primary_screen/tabs/home_tab/tab_item_widget.dart';
 import 'package:evently/utils/config.dart';
@@ -19,20 +18,12 @@ class CustomListView extends StatefulWidget {
 }
 
 class _CustomListViewState extends State<CustomListView> {
-  List<String> titles = [];
   late EventHomeProvider eventProvider;
 
   @override
   Widget build(BuildContext context) {
     eventProvider = Provider.of<EventHomeProvider>(context);
-    titles = [
-      AppLocalizations.of(context)!.all,
-      AppLocalizations.of(context)!.sport,
-      AppLocalizations.of(context)!.birthday,
-      AppLocalizations.of(context)!.meeting,
-      AppLocalizations.of(context)!.book_club,
-      AppLocalizations.of(context)!.exhibition,
-    ];
+    List<String> titles = ModelApp.getHomeTitles(context);
     return ListView.separated(
       scrollDirection: Axis.horizontal,
       itemBuilder: (context, index) => InkWell(

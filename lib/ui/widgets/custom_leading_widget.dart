@@ -11,8 +11,8 @@ class CustomLeadingWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(
-        left: Config.width(context) * 0.03,
+      margin: EdgeInsetsDirectional.only(
+        start: Config.width(context) * 0.03,
         top: Config.height(context) * 0.01,
       ),
       decoration: BoxDecoration(

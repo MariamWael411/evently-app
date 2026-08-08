@@ -1,3 +1,4 @@
+import 'package:evently/model/introduction_model.dart';
 import 'package:evently/ui/widgets/custom_elevated_button.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -5,7 +6,6 @@ import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import '../../l10n/app_localizations.dart';
 import '../../providers/theme_provider.dart';
-import '../../utils/app_image.dart';
 import '../../utils/config.dart';
 
 class ListViewWidget extends StatelessWidget {
@@ -17,9 +17,6 @@ class ListViewWidget extends StatelessWidget {
     required this.controller,
   });
 
-  List<String> images = [];
-  List<String> titles = [];
-  List<String> bodies = [];
   VoidCallback next;
   VoidCallback finish;
   int index;
@@ -29,28 +26,16 @@ class ListViewWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     var themeProvider = Provider.of<ThemeProvider>(context);
 
-    images = [
-      themeProvider.isDark() ? AppImage.intro1Dark : AppImage.intro1Light,
-      themeProvider.isDark() ? AppImage.intro2Dark : AppImage.intro2Light,
-      themeProvider.isDark() ? AppImage.intro3Dark : AppImage.intro3Light,
-    ];
-    titles = [
-      AppLocalizations.of(context)!.intro2_title,
-      AppLocalizations.of(context)!.intro3_title,
-      AppLocalizations.of(context)!.intro4_title,
-    ];
-    bodies = [
-      AppLocalizations.of(context)!.intro2_body,
-      AppLocalizations.of(context)!.intro3_body,
-      AppLocalizations.of(context)!.intro4_body,
-    ];
+
+    List<IntroductionModel> introModel = IntroductionModel.getIntroModel(
+        context: context, themeProvider: themeProvider);
     return Padding(
       padding: EdgeInsets.all(Config.width(context) * 0.04),
       child: Column(
         spacing: Config.height(context) * 0.01,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Image.asset(images[index]),
+          Image.asset(introModel[index].image),
           Center(
             child: AnimatedContainer(
               duration: Duration(milliseconds: 300),
@@ -70,14 +55,20 @@ class ListViewWidget extends StatelessWidget {
               ),
             ),
           ),
-          Text(titles[index], style: Theme.of(context).textTheme.bodyLarge),
-          Text(bodies[index], style: Theme.of(context).textTheme.bodyMedium),
+          Text(introModel[index].title, style: Theme
+              .of(context)
+              .textTheme
+              .bodyLarge),
+          Text(introModel[index].body, style: Theme
+              .of(context)
+              .textTheme
+              .bodyMedium),
           Spacer(),
           CustomElevatedButton(
-            text: (index == images.length - 1)
+            text: (index == introModel.length - 1)
                 ? AppLocalizations.of(context)!.lets_start
                 : AppLocalizations.of(context)!.next,
-            onClick: (index == images.length - 1) ? finish : next,
+            onClick: (index == introModel.length - 1) ? finish : next,
           ),
           SizedBox(height: Config.height(context) * 0.01),
         ],

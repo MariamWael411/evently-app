@@ -2,7 +2,6 @@ import 'package:evently/providers/event_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../l10n/app_localizations.dart';
 import '../../model/model_app.dart';
 import '../../providers/theme_provider.dart';
 import '../../utils/config.dart';
@@ -16,19 +15,11 @@ class ListViewAddEventWidget extends StatefulWidget {
 }
 
 class _ListViewAddEventWidgetState extends State<ListViewAddEventWidget> {
-  List<String> titles = [];
-
   @override
   Widget build(BuildContext context) {
     var themeProvider = Provider.of<ThemeProvider>(context);
     var eventProvider = Provider.of<EventProvider>(context);
-    titles = [
-      AppLocalizations.of(context)!.sport,
-      AppLocalizations.of(context)!.birthday,
-      AppLocalizations.of(context)!.meeting,
-      AppLocalizations.of(context)!.book_club,
-      AppLocalizations.of(context)!.exhibition,
-    ];
+    List<String> titles = ModelApp.getAddEventTitles(context);
     return Column(
       spacing: Config.height(context) * 0.02,
       children: [

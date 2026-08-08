@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:icon_plus/icon_plus.dart';
 
+import '../l10n/app_localizations.dart';
 import '../utils/app_image.dart';
 
 class ModelApp {
@@ -34,4 +35,25 @@ class ModelApp {
     AppImage.bookClubDark,
     AppImage.exhibitionDark,
   ];
+
+  static List<String> getAddEventTitles(BuildContext context) {
+    return [
+      AppLocalizations.of(context)!.sport,
+      AppLocalizations.of(context)!.birthday,
+      AppLocalizations.of(context)!.meeting,
+      AppLocalizations.of(context)!.book_club,
+      AppLocalizations.of(context)!.exhibition,
+    ];
+  }
+
+  static List<String> getHomeTitles(BuildContext context) {
+    return [
+      AppLocalizations.of(context)!.all,
+      AppLocalizations.of(context)!.sport,
+      AppLocalizations.of(context)!.birthday,
+      AppLocalizations.of(context)!.meeting,
+      AppLocalizations.of(context)!.book_club,
+      AppLocalizations.of(context)!.exhibition,
+    ];
+  }
 }

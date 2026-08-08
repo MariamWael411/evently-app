@@ -23,24 +23,30 @@ class LoginLogic {
           context: context,
           content: AppLocalizations.of(context)!.loading,
         );
+
         final credential = await FirebaseAuth.instance
             .signInWithEmailAndPassword(
               email: emailController.text,
               password: passwordController.text,
             );
+
         //todo: get in firestore
         var myUser = await FirebaseUtils.getUserFromFireStore(
           credential.user?.uid ?? '',
         );
+
         if (myUser == null) {
           return;
         }
         //todo:save in provider
+
         var userProvider = Provider.of<UserProvider>(context, listen: false);
+
         userProvider.updateUser(myUser);
 
         //todo: hide loading
         UtilsDialog.hideDialog(context: context);
+        print('4');
         //todo: show message success
         UtilsDialog.showMessage(
           context: context,
@@ -51,20 +57,6 @@ class LoginLogic {
             Navigator.pushReplacementNamed(context, AppRoute.primaryScreen);
           },
         );
-      } on FirebaseAuthException catch (e) {
-        if (e.code == 'invalid-credential') {
-          //todo: hide loading
-          UtilsDialog.hideDialog(context: context);
-          //todo: show message error
-          UtilsDialog.showMessage(
-            context: context,
-            content: AppLocalizations.of(
-              context,
-            )!.email_or_password_is_incorrect,
-            title: AppLocalizations.of(context)!.error,
-            posAction: AppLocalizations.of(context)!.ok,
-          );
-        }
       } catch (e) {
         //todo: hide loading
         UtilsDialog.hideDialog(context: context);

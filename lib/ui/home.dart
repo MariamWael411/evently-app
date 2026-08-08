@@ -85,26 +85,28 @@ class _HomeState extends State<Home> {
                         .of(context)
                         .textTheme
                         .bodySmall,),
-                    CutomFlutterToggle(
-                        option1: themeProvider.isDark() ? Icon(
-                          Bootstrap.sun, color: Theme
-                            .of(context)
-                            .colorScheme
-                            .inversePrimary,) : Icon(
-                          Bootstrap.sun_fill, color: AppColor.white,),
-                        option2: themeProvider.isDark() ? Icon(
-                          Bootstrap.moon_fill, color: AppColor.white,) : Icon(
-                          Bootstrap.moon, color: Theme
-                            .of(context)
-                            .colorScheme
-                            .inversePrimary,),
-                        OnClick: (index) {
-                          if (index == 0) {
-                            themeProvider.changeThemeToDark(ThemeMode.light);
-                          } else {
-                            themeProvider.changeThemeToDark(ThemeMode.dark);
+                    Expanded(
+                      child: CutomFlutterToggle(
+                          option1: themeProvider.isDark() ? Icon(
+                            Bootstrap.sun, color: Theme
+                              .of(context)
+                              .colorScheme
+                              .inversePrimary,) : Icon(
+                            Bootstrap.sun_fill, color: AppColor.white,),
+                          option2: themeProvider.isDark() ? Icon(
+                            Bootstrap.moon_fill, color: AppColor.white,) : Icon(
+                            Bootstrap.moon, color: Theme
+                              .of(context)
+                              .colorScheme
+                              .inversePrimary,),
+                          OnClick: (index) {
+                            if (index == 0) {
+                              themeProvider.changeThemeToDark(ThemeMode.light);
+                            } else {
+                              themeProvider.changeThemeToDark(ThemeMode.dark);
+                            }
                           }
-                        }
+                      ),
                     ),
                   ],
                 ),

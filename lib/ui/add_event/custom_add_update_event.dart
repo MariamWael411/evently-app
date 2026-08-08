@@ -57,7 +57,6 @@ class CustomAddUpdateEvent extends StatefulWidget {
 }
 
 class _AddEventScreenState extends State<CustomAddUpdateEvent> {
-  List<String> titles = [];
   var title = '';
   var description = '';
   late LanguageProvider languageProvider;
@@ -104,17 +103,10 @@ class _AddEventScreenState extends State<CustomAddUpdateEvent> {
         : ModelApp.imagesLight[eventProvider.currentIndex];
     userProvider = Provider.of<UserProvider>(context);
 
-    titles = [
-      AppLocalizations.of(context)!.sport,
-      AppLocalizations.of(context)!.birthday,
-      AppLocalizations.of(context)!.meeting,
-      AppLocalizations.of(context)!.book_club,
-      AppLocalizations.of(context)!.exhibition,
-    ];
+    List<String> titles = ModelApp.getAddEventTitles(context);
     eventName = titles[eventProvider.currentIndex];
     if (args != null) {
       args?.name = titles[eventProvider.currentIndex];
-      //args?.index=eventProvider.currentIndex;
       args?.image = selectedImage;
     }
 
@@ -247,7 +239,6 @@ class _AddEventScreenState extends State<CustomAddUpdateEvent> {
           });
     }
   }
-
   void chooseTime() async {
     final time = await showTimePicker(
       context: context,
